@@ -1,6 +1,6 @@
 import { RECIEVE_CURRENT_USER } from "action_path";
 
-const someReducer = (oldState = {}, action) => {
+const usersReducer = (oldState = {}, action) => {
 	Object.freeze(oldState);
 	let newState = Object.assign({}, oldState);
 	switch (action.type) {
@@ -12,4 +12,4 @@ const someReducer = (oldState = {}, action) => {
 	}
 };
 
-export default someReducer;
+export default usersReducer;

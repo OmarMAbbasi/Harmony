@@ -1,0 +1,129 @@
+```js
+
+{
+  entities: {
+
+    users: {
+      6: {
+        id: 6,
+        username: "Icarus",
+        digits: 1744,
+        email: "icarus@gmail.com"
+      },
+      9: {
+        id: 9,
+        username: "Jellybean",
+        digits: 0125,
+        email: "jellybean@gmail.com"
+      },
+       18: {
+        id: 18,
+        username: "Centra",
+        digits: 2315,
+        email: "Centra@gmail.com"
+      },
+       22: {
+        id: 22,
+        username: "Zalindae",
+        digits: 1224,
+        email: "Zalindae@gmail.com",
+      },
+    },
+    guilds: {
+    2: {
+        id: 2,
+        name: "Avalance",
+        ownerId: 1
+    },
+
+    5: {
+        id: 5,
+        name: "Just Pump"
+    }
+
+    },
+    channels: {
+        7: {
+            id: 7,
+            type: "guildText" ,
+            ownerId: 44,
+            name: "Mythic+ 1",
+            position: 1,
+        },
+        58: {
+            id: 58,
+            type: "directMessage",
+            ownerId: 6,
+            name: "Jellybean",
+            position:  3,
+        },
+        66: {
+            id: 66,
+            type: "groupChat",
+            ownerId: 10,
+            name: "Centra, Zalindae",
+            position: 5,
+        },
+        82: {
+            id: 82,
+            type: "guildVoice",
+            ownerId: 2,
+            name: "Raid",
+            position: 1,
+        },
+        44: {
+            id: 44,
+            type: "category",
+            ownerId: 2,
+            name: "Dungeons",
+            position:  2,
+        },
+    },
+    messages: {
+        82: {
+            id: 82,
+            body: "Want some pizza?",
+            authorId: 9
+        },
+        15: {
+            id:  15,
+            body: "sure",
+            authorId: 6
+        },
+        31: {
+            id:  31,
+            body: "You comin to raid tonight?",
+            authorId: 18
+        },
+        49: {
+            id:  49,
+            body: "probably not. Too much work to do",
+            authorId: 6
+        },
+        19: {
+            id:  19,
+            body: "How're your classes goin?"
+            authorId: 22
+        }
+    },
+    inviteLinks: {
+         6: {
+            id: 6,
+            guildId: 5,
+            uses: 0,
+            expirationDate: Friday, June 5th, 2019. 12:00:00AM.
+            email: "icarus@gmail.com"
+         },
+    }
+
+
+
+
+  session: { currentUserId: 6 }
+
+  ui: {}
+  errors:{}
+
+
+}
+```
