@@ -12,3 +12,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	ReactDOM.render(<h1>ReactIsWorking</h1>);
 });
+const
