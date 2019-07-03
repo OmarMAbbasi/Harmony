@@ -22,6 +22,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 8, allow_nil: true }
   validate :username_constraints
 
+  before_validation :generate_uniqe_user_tag
+
   attr_reader :password
 
   #   after_initialize :ensure_session_token
@@ -53,13 +55,23 @@ class User < ApplicationRecord
   end
 
   def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64(16)
+    self.session_token || reset_session!
   end
 
   def reset_session!
     self.session_token = SecureRandom.urlsafe_base64(16)
-    save!
+    while User.find_by(session_token: session_token)
+      self.session_token = new_session_token
+    end
     self.session_token
   end
+
+  def generate_unique_user_tag
+    exists = true
+    unless exists
+      self.digits = rand(1..9999)
+      exists = User.where(name: username, digits: self.digits)
+    end
+    self.digits
+  end
 end
-defaults: {format: :json} 
