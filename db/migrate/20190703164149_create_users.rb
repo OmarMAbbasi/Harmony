@@ -11,9 +11,9 @@ class CreateUsers < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :users, [:username, :digits], unique: true
+    add_index :users, %i[username digits], unique: true
     add_index :users, :session_token, unique: true
-    add_index :users, :email, unique:true
-    #Ex:- add_index("admin_users", "username")
+    add_index :users, :email, unique: true
+    # Ex:- add_index("admin_users", "username")
   end
 end
