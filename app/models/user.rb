@@ -22,11 +22,12 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 8, allow_nil: true }
   validate :username_constraints
 
-  before_validation :generate_uniqe_user_tag
+  after_initialize :generate_unique_user_tag  
+  after_initialize :ensure_session_token
+
 
   attr_reader :password
 
-  #   after_initialize :ensure_session_token
 
   def username_constraints
     if username =~ /[@#:`"']/
@@ -63,14 +64,15 @@ class User < ApplicationRecord
     while User.find_by(session_token: session_token)
       self.session_token = new_session_token
     end
+    save!
     self.session_token
   end
 
-  def generate_unique_user_tag
+  def self.generate_unique_user_tag
     exists = true
     unless exists
       self.digits = rand(1..9999)
-      exists = User.where(name: username, digits: self.digits)
+      exists = User.where(name: username, digits: self.digits).exists?(conditions = :none)
     end
     self.digits
   end

@@ -9,7 +9,6 @@ class Api::SessionsController < ApplicationController
     if user
       login(user)
       render json
-    else
     end
   end
 
