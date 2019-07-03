@@ -15,25 +15,22 @@
 #
 
 class User < ApplicationRecord
-  validates :user_tag, uniqueness: { scope: %i[username digits] }
+  validates :username, uniqueness: { scope: [:digits] }
   validates :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :email, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
   validate :username_constraints
 
-  after_initialize :generate_unique_user_tag  
+  before_create :ensure_user_tag
   after_initialize :ensure_session_token
-
-
   attr_reader :password
-
 
   def username_constraints
     if username =~ /[@#:`"']/
-      errors.add(:username, 'username cannot contain characters (@, #, :, `, ", or \'')
+      @errors.add(:user, 'username cannot contain characters (@, #, :, `, ", or \'')
     elsif username == 'here' || username == 'everyone'
-      erros.add(:username, "cannot user 'here' or 'everyone")
+      @errors.add(:user, "cannot user 'here' or 'everyone")
     end
   end
 
@@ -56,24 +53,28 @@ class User < ApplicationRecord
   end
 
   def ensure_session_token
-    self.session_token || reset_session!
+    session_token || reset_session!
+  end
+
+  def ensure_user_tag
+    self.digits ||= generate_unique_user_tag
   end
 
   def reset_session!
     self.session_token = SecureRandom.urlsafe_base64(16)
     while User.find_by(session_token: session_token)
-      self.session_token = new_session_token
+      self.session_token = SecureRandom.urlsafe_base64(16)
     end
     save!
-    self.session_token
+    session_token
   end
 
-  def self.generate_unique_user_tag
-    exists = true
+  def generate_unique_user_tag
+    exists = false
     unless exists
-      self.digits = rand(1..9999)
-      exists = User.where(name: username, digits: self.digits).exists?(conditions = :none)
+      digits = rand(1..9999)
+      exists = User.where(username: username, digits: digits).exists?(conditions = :none)
     end
-    self.digits
+    digits
   end
 end
