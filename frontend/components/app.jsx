@@ -5,17 +5,15 @@ import LandingContainer from "./landing/landing";
 import RegisterContainer from "./auth/register_container";
 import LoginContainer from "./auth/login_container";
 import HomeContainer from "./home/home_container";
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
-
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
 	<div>
 		<Switch>
-			<AuthRoute path="/login" component={LoginContainer} />
-			<AuthRoute path="/register" component={RegisterContainer} />
-			<Route path="/home" component={HomeContainer} />
-			<Route path="/" component={LandingContainer} />
+			<AuthRoute exact path="/login" component={LoginContainer} />
+			<AuthRoute exact path="/register" component={RegisterContainer} />
+			<ProtectedRoute exact path="/home" component={HomeContainer} />
+			<Route exact path="/" component={LandingContainer} />
 		</Switch>
 	</div>
 );

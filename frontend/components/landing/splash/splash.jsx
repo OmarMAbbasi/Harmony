@@ -11,7 +11,7 @@ class Splash extends React.Component {
 		this.newDummyUser = this.newDummyUser.bind(this);
 		this.demoLogin = this.demoLogin.bind(this);
 		this.openUsernameField = this.openUsernameField.bind(this);
-		this.state = { opened: false, loggedIn: false };
+		this.state = { opened: false};
 	}
 
 	newDummyUser(e) {
@@ -32,6 +32,10 @@ class Splash extends React.Component {
 	openUsernameField(e) {
 		e.preventDefault();
 		this.setState({ opened: true });
+	}
+
+	componentDidMount() {
+		this.currentUser = this.props.currentUser;
 	}
 
 	render() {
@@ -65,7 +69,6 @@ class Splash extends React.Component {
 			<div>
 				<h1>Splash Page</h1>
 				{splash}
-				<button onClick={this.props.logout}>TestLogout</button>
 			</div>
 		);
 	}

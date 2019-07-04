@@ -23,7 +23,7 @@ class AuthBox extends React.Component {
 		const user = Object.assign({}, this.state);
 		if (!this.currentUser) {
 			this.props.processForm(user).then(() => this.props.history.push("/home/"));
-			return <Route to="/" />;
+			return <Route to="/home/" />;
 		} else {
 			this.setState({ errors: "Not Logged In" });
 		}
