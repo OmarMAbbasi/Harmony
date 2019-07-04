@@ -8,7 +8,7 @@ const _nullUser = {
 	id: null
 };
 
-export default sessionReducer = (oldState = _nullUser, action) => {
+const sessionReducer = (oldState = _nullUser, action) => {
 	Object.freeze(oldState);
 	let newState = Object.assign({}, oldState);
 	switch (action.type) {
@@ -23,3 +23,5 @@ export default sessionReducer = (oldState = _nullUser, action) => {
 			return oldState;
 	}
 };
+
+export default sessionReducer;

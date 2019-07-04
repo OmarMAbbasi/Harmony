@@ -1,8 +1,9 @@
 import React from "react";
+import Landing from './landing/landing'
 
 const App = () => (
 	<div>
-		<h1>React is Working</h1>
+		<Landing/>
 	</div>
 );
 
