@@ -3,7 +3,7 @@ import Landing from "../components/Landing";
 import { logout } from "../../actions/session_actions";
 
 const mapStateToProps = (
-	{ session: { id }, entities: { users } },
+	{ sessions: { id }, entities: { users } },
 	ownProps
 ) => ({
 	currentUser: users[id]
