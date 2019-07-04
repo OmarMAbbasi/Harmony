@@ -59,7 +59,30 @@ class AuthBox extends React.Component {
 			</label>
 		);
 
+		let formFields;
 
+		if (this.props.formType === "login") {
+			formFields = (
+				<div>
+					{this.props.title}
+					{emailField}
+					{passwordField}
+					<input type="submit" value="Login" />
+					{this.props.navLink}
+				</div>
+			);
+		} else {
+			formFields = (
+				<div>
+					{this.props.title}
+					{emailField}
+					{usernameField}
+					{passwordField}
+					<input type="submit" value="Continue" />
+					{this.props.navLink}
+				</div>
+			);
+		}
 
 		return (
 			<div>
@@ -67,12 +90,7 @@ class AuthBox extends React.Component {
 				<form onSubmit={this.handleSubmit}>
 					<br />
 					<div>
-						{this.props.title}
-						{emailField}
-						{usernameField}
-						{passwordField}
-						<input type="submit" value={this.props.submitText} />
-						{this.props.navLink}
+						{formFields}
 						{/* {this.renderErrors()} */}
 					</div>
 				</form>

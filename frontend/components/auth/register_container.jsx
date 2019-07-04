@@ -8,7 +8,7 @@ import AuthBox from "./auth_box";
 const mapStateToProps = ({ errors }) => {
 	return {
 		errors: errors.session,
-		submitText: "Continue",
+		formType: "register",
 		navLink: <NavLink to="/login">Already have an account?</NavLink>,
 		title: (
 			<div>
