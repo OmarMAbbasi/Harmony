@@ -33,7 +33,6 @@ class AuthBox extends React.Component {
 					type="text"
 					value={this.state.username}
 					onChange={this.update("username")}
-					className="login-input"
 				/>
 			</label>
 		);
@@ -43,34 +42,38 @@ class AuthBox extends React.Component {
 				EMAIL:
 				<input
 					type="text"
-					value={this.state.username}
-					onChange={this.update("username")}
-					className="login-input"
+					value={this.state.email}
+					onChange={this.update("email")}
 				/>
 			</label>
 		);
 
 		const passwordField = (
 			<label>
-				Password:
+				PASSWORD:
 				<input
 					type="password"
 					value={this.state.password}
 					onChange={this.update("password")}
-					className="login-input"
 				/>
 			</label>
 		);
+
+
 
 		return (
 			<div>
 				<p>Discord Image in top left</p>
 				<form onSubmit={this.handleSubmit}>
 					<br />
-					{this.renderErrors()}
 					<div>
-						
-						<input type="submit" value={this.props.formType} />
+						{this.props.title}
+						{emailField}
+						{usernameField}
+						{passwordField}
+						<input type="submit" value={this.props.submitText} />
+						{this.props.navLink}
+						{/* {this.renderErrors()} */}
 					</div>
 				</form>
 			</div>

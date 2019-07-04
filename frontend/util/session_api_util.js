@@ -8,7 +8,7 @@ export const login = user =>
 export const register = user =>
 	$.ajax({
 		method: "POST",
-		url: "/api/user",
+		url: "/api/users",
 		data: { user }
 	});
 
@@ -28,5 +28,5 @@ export const abandon = id =>
 export const logout = () =>
 	$.ajax({
 		method: "DELETE",
-		url: "/api/session"
+		url: "api/session"
 	});
