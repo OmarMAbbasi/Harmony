@@ -9,6 +9,8 @@ import OpenButton from './open_button';
 class Splash extends React.Component {
 	constructor(props) {
 		super(props);
+		debugger;
+		this.currentUser = this.props.currentUser
 		this.newDummyUser = this.newDummyUser.bind(this);
 		this.demoLogin = this.demoLogin.bind(this);
 		this.openUsernameField = this.openUsernameField.bind(this);
@@ -34,6 +36,8 @@ class Splash extends React.Component {
 	render() {
 		const opened = this.state.opened;
 		let splash;
+		
+
 		if (!opened) {
 			splash = (
 				<ul>

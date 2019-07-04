@@ -11,7 +11,7 @@ const Landing = ({ currentUser }) => {
 	return (
 		<div>
 			<Navbar />
-			<Splash />
+			<Splash currentUser={currentUser}/>
 			<Footer />
 		</div>
 	);

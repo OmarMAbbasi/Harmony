@@ -7,7 +7,7 @@ function OpenButton({ openUsernameField, currentUser }) {
 	} else {
 		return (
 			<Link to={`/home/`}>
-				<div>Open Discord</div>
+				<button>Open Discord</button>
 			</Link>
 		);
 	}
