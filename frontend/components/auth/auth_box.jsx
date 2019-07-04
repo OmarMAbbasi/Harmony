@@ -1,6 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-
+import { Route, Link, Switch, Redirect, withRouter } from "react-router-dom";
 class AuthBox extends React.Component {
 	constructor(props) {
 		super(props);
@@ -22,7 +21,12 @@ class AuthBox extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = Object.assign({}, this.state);
-		this.props.processForm(user);
+		if (!this.currentUser) {
+			this.props.processForm(user).then(() => this.props.history.push("/home/"));
+			return <Route to="/" />;
+		} else {
+			this.setState({ errors: "Not Logged In" });
+		}
 	}
 
 	render() {

@@ -6,7 +6,6 @@ import { register } from "../../actions/session_actions";
 import AuthBox from "./auth_box";
 
 const mapStateToProps = ({ errors }) => {
-	debugger
 	return {
 		errors: errors.session,
 		formType: "register",
@@ -25,7 +24,9 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(AuthBox);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(AuthBox)
+);

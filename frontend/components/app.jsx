@@ -1,15 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Switch, Router, Route, Link } from "react-router-dom";
 
-import LandingContainer from './landing/landing'
+import LandingContainer from "./landing/landing";
 import RegisterContainer from "./auth/register_container";
 import LoginContainer from "./auth/login_container";
+import HomeContainer from "./home/home_container";
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+
+
 
 const App = () => (
 	<div>
-		<Route exact path='/' component={LandingContainer}/>
-		<Route exact path='/login' component={LoginContainer}/>
-		<Route exact path='/register' component={RegisterContainer}/>
+		<Switch>
+			<AuthRoute path="/login" component={LoginContainer} />
+			<AuthRoute path="/register" component={RegisterContainer} />
+			<Route path="/home" component={HomeContainer} />
+			<Route path="/" component={LandingContainer} />
+		</Switch>
 	</div>
 );
 

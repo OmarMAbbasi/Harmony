@@ -1,20 +1,17 @@
 import React from "react";
 import { register } from "../../../actions/session_actions";
-import { Link, withRouter } from "react-router-dom";
-import OpenButton from './open_button';
-
-
-
+import { Link, Redirect, withRouter } from "react-router-dom";
+import OpenButton from "./open_button";
 
 class Splash extends React.Component {
 	constructor(props) {
 		super(props);
-		debugger;
-		this.currentUser = this.props.currentUser
+		this.currentUser = this.props.currentUser;
+		this.logout = this.props.logout;
 		this.newDummyUser = this.newDummyUser.bind(this);
 		this.demoLogin = this.demoLogin.bind(this);
 		this.openUsernameField = this.openUsernameField.bind(this);
-		this.state = { opened: false };
+		this.state = { opened: false, loggedIn: false };
 	}
 
 	newDummyUser(e) {
@@ -25,7 +22,11 @@ class Splash extends React.Component {
 	}
 	demoLogin(e) {
 		e.preventDefault();
-		console.log("Demo Login Script");
+		let user = {
+			email: "demouser@gmail.com",
+			password: "password1234"
+		};
+		this.props.login(user).then(() => this.props.history.push("/home/"));
 	}
 
 	openUsernameField(e) {
@@ -36,7 +37,6 @@ class Splash extends React.Component {
 	render() {
 		const opened = this.state.opened;
 		let splash;
-		
 
 		if (!opened) {
 			splash = (
@@ -56,7 +56,7 @@ class Splash extends React.Component {
 			splash = (
 				<form onSubmit={this.newDummyUser}>
 					<input type="text" placeholder="enter a username"></input>
-					<input type="submit" value="Some Arrow"/>
+					<input type="submit" value="Some Arrow" />
 					<Link to={`/login/`}>Already have an account? </Link>
 				</form>
 			);
@@ -65,6 +65,7 @@ class Splash extends React.Component {
 			<div>
 				<h1>Splash Page</h1>
 				{splash}
+				<button onClick={this.props.logout}>TestLogout</button>
 			</div>
 		);
 	}

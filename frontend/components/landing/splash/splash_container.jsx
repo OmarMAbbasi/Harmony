@@ -2,7 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { register } from "../../../actions/session_actions";
+import { register, login, logout } from "../../../actions/session_actions";
 import Splash from "./splash";
 
 const mapStateToProps = (
@@ -13,11 +13,14 @@ const mapStateToProps = (
 });
 
 const mapDispatchToProps = dispatch => ({
-	register: () => dispatch(register())
+	register: () => dispatch(register()),
+	login: user => dispatch(login(user)),
+	logout: () => dispatch(logout())
 });
 
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Splash);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(Splash)
+);
