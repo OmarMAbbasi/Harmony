@@ -28,22 +28,33 @@ const receiveErrors = errors => ({
 
 //Thunk
 export const login = user => dispatch =>
-	SessionAPIUtil.login(user).then(currentUser =>
-		dispatch(receiveCurrentUser(currentUser))
+	SessionAPIUtil.login(user).then(
+		user => dispatch(receiveCurrentUser(user)),
+		err => dispatch(receiveErrors(err.responseJSON))
 	);
 
 export const register = user => dispatch =>
-	SessionAPIUtil.register(user).then(currentUser =>
-		dispatch(receiveCurrentUser(currentUser))
+	SessionAPIUtil.register(user).then(
+		currentUser => dispatch(receiveCurrentUser(currentUser)),
+		err => {
+			return dispatch(receiveErrors(err.responseJSON));
+		}
 	);
 
 export const logout = () => dispatch =>
-	SessionAPIUtil.logout().then(() => dispatch(logoutCurrentUser()));
-
-export const claim = user => dispatch =>
-	SessionAPIUtil.claim(user).then(currentUser =>
-		dispatch(receiveCurrentUser(currentUser))
+	SessionAPIUtil.logout().then(
+		() => dispatch(logoutCurrentUser()),
+		err => dispatch(receiveErrors(err.responseJSON))
 	);
 
-export const abandon = user => dispatch =>
-	SessionAPIUtil.abandon(user.id).then(() => dispatch(abandonUsername()));
+// export const claim = user => dispatch =>
+// 	SessionAPIUtil.claim(user).then(
+// 		currentUser => dispatch(receiveCurrentUser(currentUser)),
+// 		err => dispatch(receiveErrors(err.responseJSON))
+// 	);
+
+// export const abandon = user => dispatch =>
+// 	SessionAPIUtil.abandon(user.id).then(
+// 		() => dispatch(abandonUsername()),
+// 		err => dispatch(receiveErrors(err.responseJSON))
+// 	);

@@ -19,8 +19,8 @@ class Api::SessionsController < ApplicationController
       logout
       render 'api/users/show'
     else
-      render json: ['Some Error Page Here'], status: 404
+      render json: ["Nobody signed in"], status: 404
     end
-    # redirect_to new_session_url
+
   end
 end

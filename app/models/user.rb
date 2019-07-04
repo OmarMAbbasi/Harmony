@@ -53,7 +53,7 @@ class User < ApplicationRecord
   end
 
   def ensure_session_token
-    session_token || reset_session!
+    self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
 
   def ensure_user_tag
@@ -66,7 +66,7 @@ class User < ApplicationRecord
       self.session_token = SecureRandom.urlsafe_base64(16)
     end
     save!
-    session_token
+    self.session_token
   end
 
   def generate_unique_user_tag

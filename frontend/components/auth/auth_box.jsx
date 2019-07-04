@@ -17,12 +17,23 @@ class AuthBox extends React.Component {
 				[field]: e.currentTarget.value
 			});
 	}
+	handleErrors() {
+		return (
+			<ul>
+				{this.props.errors.map((error, i) => (
+					<li key={`error-${i}`}>{error}</li>
+				))}
+			</ul>
+		);
+	}
 
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = Object.assign({}, this.state);
 		if (!this.currentUser) {
-			this.props.processForm(user).then(() => this.props.history.push("/home/"));
+			this.props
+				.processForm(user)
+				.then(() => this.props.history.push("/home/"));
 			return <Route to="/home/" />;
 		} else {
 			this.setState({ errors: "Not Logged In" });
@@ -95,7 +106,7 @@ class AuthBox extends React.Component {
 					<br />
 					<div>
 						{formFields}
-						{/* {this.renderErrors()} */}
+						{this.handleErrors()}
 					</div>
 				</form>
 			</div>
