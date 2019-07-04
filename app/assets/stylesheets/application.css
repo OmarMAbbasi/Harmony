@@ -15,20 +15,87 @@
  */
 /* CSSReset */
 
-
- html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -36,3 +103,63 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+.splash {
+	background: #23272a;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+.nav-anchor {
+	background-attachment: transparent;
+	z-index: 30;
+}
+
+.nav-desktop {
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 0 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	flex-wrap: wrap;
+	width: 100%;
+	z-index: 56;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	height: 72px;
+	padding: 8px 0;
+}
+
+.nav-logo {
+	flex: 0 0 auto;
+	display: flex;
+}
+
+.nav-icon-container {
+	flex-shrink: 1;
+	flex-grow: 1;
+	flex-basis: auto;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+}
+
+.nav-gamepad {
+	flex-grow: 0;
+	flex-shrink: 0;
+	height: 36px;
+	width: 33px;
+}
+.nav-discord {
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: 98px;
+	height: 36px;
+}
+
+
+.nav-dropdowns

@@ -19,9 +19,16 @@ class Navbar extends React.Component {
 
 	render() {
 		return (
-			<header>
-				<nav>
-					<div>Logo</div>
+			<header className="nav-anchor">
+				<nav className="nav-desktop">
+					<div class="nav-logo">
+						<Link to="/">
+							<div className="nav-icon-container">
+								<div>Incoming Gamepad</div>
+								<div>Incoming Discord</div>
+							</div>
+						</Link>
+					</div>
 					<ul>
 						<li>Navbar list</li>
 						<li>Navbar list</li>
