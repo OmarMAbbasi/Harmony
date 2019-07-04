@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	ReactDOM.render(<Root store={store} />, root);
 
 	//Temporary Window Debugger methods
-	window.signup = SessionAPIUtil.signup;
+	window.register = SessionAPIUtil.register;
 	window.login = SessionAPIUtil.login;
 	window.logout = SessionAPIUtil.logout;
 	window.getState = store.getState;

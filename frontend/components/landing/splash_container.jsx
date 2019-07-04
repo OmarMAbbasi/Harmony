@@ -2,11 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { signup } from "../../actions/session_actions";
-
-// const mapStateToProps = (state, ownProps) => ({
-// 	currentUser: console.log(state)
-// });
+import { register } from "../../actions/session_actions";
 
 const mapStateToProps = (
 	{ sessions: { id }, entities: { users } },
@@ -16,26 +12,20 @@ const mapStateToProps = (
 });
 
 const mapDispatchToProps = dispatch => ({
-	signup: () => dispatch(signup())
+	register: () => dispatch(register())
 });
 
-// function LoginButton(props) {
-// 	return <button onClick={props.onClick}>Login</button>;
-// }
-
-// function LogoutButton(props) {
-// 	return (<button onClick={props.onClick}>Logout</button>;)
-// }
-
 function OpenButton({ openUsernameField, currentUser }) {
-	if (!currentUser) {
+	if (currentUser) {
 		return <button onClick={openUsernameField}>Open Discord</button>;
 	} else {
-		return <Link to={`/home/`}>Open Discord</Link>;
+		return (
+			<Link to={`/home/`}>
+				<div>Open Discord</div>
+			</Link>
+		);
 	}
 }
-
-//<button>Open Discord</button>
 
 class Splash extends React.Component {
 	constructor(props) {
@@ -48,7 +38,9 @@ class Splash extends React.Component {
 
 	newDummyUser(e) {
 		e.preventDefault();
-		console.log("Create new user. Mount main container and contnue signup.");
+		console.log(
+			"Create new user. Mount main container and continue registration."
+		);
 	}
 	demoLogin(e) {
 		e.preventDefault();
@@ -60,19 +52,6 @@ class Splash extends React.Component {
 		this.setState({ opened: true });
 		console.log("hi");
 	}
-
-	// render() {
-	// 	const isLoggedIn = this.state.isLoggedIn;
-	// 	let button;
-
-	// 	if (isLoggedIn) {
-	// 		button = <LogoutButton onClick={this.handleLogoutClick} />;
-	// 	} else {
-	// 		button = <LoginButton onClick={this.handleLoginClick} />;
-	// 	}
-
-	// 	return <div>{button}</div>;
-	// }
 
 	render() {
 		const opened = this.state.opened;

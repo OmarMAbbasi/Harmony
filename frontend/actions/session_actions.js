@@ -28,8 +28,8 @@ export const login = user => dispatch =>
 		dispatch(receiveCurrentUser(currentUser))
 	);
 
-export const signup = user => dispatch =>
-	SessionAPIUtil.signup(user).then(currentUser =>
+export const register = user => dispatch =>
+	SessionAPIUtil.register(user).then(currentUser =>
 		dispatch(receiveCurrentUser(currentUser))
 	);
 
