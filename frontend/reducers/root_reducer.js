@@ -5,9 +5,9 @@ import errorsReducer from "./errors_reducer";
 import usersReducer from "./users_reducer";
 
 const rootReducer = combineReducers({
-	entitiesReducer,
-	errorsReducer,
-	usersReducer
+	entities: entitiesReducer,
+	errors: errorsReducer,
+	users: usersReducer
 });
 
 export default rootReducer;
