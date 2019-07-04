@@ -1,21 +1,5 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-
-const mapStateToProps = (
-	{ sessions: { id }, entities: { users } },
-	ownProps
-) => ({
-	currentUser: users[id]
-});
-
-// const mapStateToProps = (state, ownProps) => ({
-// 	currentUser: console.log(state)
-// });
-
-const mapDispatchToProps = dispatch => ({
-	logout: () => dispatch(logout())
-});
 
 class Navbar extends React.Component {
 	constructor(props) {
@@ -53,7 +37,4 @@ class Navbar extends React.Component {
 	}
 }
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Navbar);
+export default Navbar;

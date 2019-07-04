@@ -1,31 +1,10 @@
 import React from "react";
+import { register } from "../../../actions/session_actions";
 import { Link, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
+import OpenButton from './open_button';
 
-import { register } from "../../actions/session_actions";
 
-const mapStateToProps = (
-	{ sessions: { id }, entities: { users } },
-	ownProps
-) => ({
-	currentUser: users[id]
-});
 
-const mapDispatchToProps = dispatch => ({
-	register: () => dispatch(register())
-});
-
-function OpenButton({ openUsernameField, currentUser }) {
-	if (currentUser) {
-		return <button onClick={openUsernameField}>Open Discord</button>;
-	} else {
-		return (
-			<Link to={`/home/`}>
-				<div>Open Discord</div>
-			</Link>
-		);
-	}
-}
 
 class Splash extends React.Component {
 	constructor(props) {
@@ -50,7 +29,6 @@ class Splash extends React.Component {
 	openUsernameField(e) {
 		e.preventDefault();
 		this.setState({ opened: true });
-		console.log("hi");
 	}
 
 	render() {
@@ -88,7 +66,4 @@ class Splash extends React.Component {
 	}
 }
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Splash);
+export default Splash;
