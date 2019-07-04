@@ -1,8 +1,9 @@
-import { connect } from "react-redux";
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { Link, withRouter } from "react-router-dom";
+
 import { register } from "../../actions/session_actions";
-import SessionForm from "./session_form";
+import AuthBox from "./auth_box";
 
 const mapStateToProps = ({ errors }) => {
 	return {
@@ -21,4 +22,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(SessionForm);
+)(AuthBox);

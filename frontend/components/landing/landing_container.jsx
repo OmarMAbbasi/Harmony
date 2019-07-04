@@ -3,11 +3,11 @@ import Landing from "../components/Landing";
 import { logout } from "../../actions/session_actions";
 
 const mapStateToProps = (
-	{ sessions: { id }, entities: { users } },
+	{ session: { id }, entities: { users } },
 	ownProps
 ) => ({
 	currentUser: users[id]
-    });
+});
 
 const mapDispatchToProps = dispatch => ({
 	logout: () => dispatch(logout())

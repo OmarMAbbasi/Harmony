@@ -1,9 +1,11 @@
 import React from "react";
-import Landing from './landing/landing'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
+import LandingContainer from './landing/landing'
 
 const App = () => (
 	<div>
-		<Landing/>
+		<Route exact path='/' component={LandingContainer}/>
 	</div>
 );
 

@@ -6,7 +6,7 @@ import { register } from "../../../actions/session_actions";
 import Splash from "./splash";
 
 const mapStateToProps = (
-	{ sessions: { id }, entities: { users } },
+	{ session: { id }, entities: { users } },
 	ownProps
 ) => ({
 	currentUser: users[id]

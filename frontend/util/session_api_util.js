@@ -12,9 +12,21 @@ export const register = user =>
 		data: { user }
 	});
 
+export const claim = user =>
+	$.ajax({
+		url: `api/user/${user.id}`,
+		method: "PATCH",
+		data: { user }
+	});
+
+export const abandon = id =>
+	$.ajax({
+		url: `api/user/${id}`,
+		method: "DELETE"
+	});
+
 export const logout = () =>
 	$.ajax({
 		method: "DELETE",
 		url: "/api/session"
 	});
-

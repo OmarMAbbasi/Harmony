@@ -52,7 +52,7 @@ class Splash extends React.Component {
 			splash = (
 				<form onSubmit={this.newDummyUser}>
 					<input type="text" placeholder="enter a username"></input>
-					<button onClick={this.newDummyUser}>Arrow</button>
+					<input type="submit" value={this.newDummyUser} />
 					<Link to={`/login/`}>Already have an account? </Link>
 				</form>
 			);
