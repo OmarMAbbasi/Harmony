@@ -12,7 +12,7 @@ const App = () => (
 		<Switch>
 			<AuthRoute exact path="/login" component={LoginContainer} />
 			<AuthRoute exact path="/register" component={RegisterContainer} />
-			<ProtectedRoute exact path="/home" component={HomeContainer} />
+			{/* <ProtectedRoute exact path="/home" component={HomeContainer} /> */}
 			<Route exact path="/" component={LandingContainer} />
 		</Switch>
 	</div>
