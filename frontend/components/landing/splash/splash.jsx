@@ -11,7 +11,7 @@ class Splash extends React.Component {
 		this.newDummyUser = this.newDummyUser.bind(this);
 		this.demoLogin = this.demoLogin.bind(this);
 		this.openUsernameField = this.openUsernameField.bind(this);
-		this.state = { opened: false};
+		this.state = { opened: false };
 	}
 
 	newDummyUser(e) {
@@ -44,17 +44,19 @@ class Splash extends React.Component {
 
 		if (!opened) {
 			splash = (
-				<ul>
-					<li>
-						<button onClick={this.demoLogin}>Demo Login</button>
-					</li>
-					<OpenButton
-						currentUser={this.currentUser}
-						openUsernameField={this.openUsernameField}
-					/>
-
-					<br></br>
-				</ul>
+				<div>
+					<div className="splash-buttons">
+						<div className="demo-login">
+							<button className="demo-login" onClick={this.demoLogin}>
+								Demo Login
+							</button>
+						</div>
+						<OpenButton
+							currentUser={this.currentUser}
+							openUsernameField={this.openUsernameField}
+						/>
+					</div>
+				</div>
 			);
 		} else {
 			splash = (
@@ -66,10 +68,17 @@ class Splash extends React.Component {
 			);
 		}
 		return (
-			<div>
-				<h1>Splash Page</h1>
-				{splash}
-			</div>
+			<section class="hero">
+				<div className="welcome">
+					<h1 className="elevator">It's time to ditch Skype and TeamSpeak.</h1>
+					<p className="pitch">
+						All-in-one voice and text chat for gamers that's free, secure, and
+						works on both your desktop and phone. Stop paying for TeamSpeak
+						servers and hassling with Skype. Simplify your life.
+					</p>
+					{splash}
+				</div>
+			</section>
 		);
 	}
 }
