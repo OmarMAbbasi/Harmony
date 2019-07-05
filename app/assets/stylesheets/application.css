@@ -412,8 +412,6 @@ video {
 	justify-content: center;
 }
 
-
-
 .landing-footer {
 	position: absolute;
 	bottom: 0;
@@ -439,14 +437,12 @@ video {
 	line-height: 34px;
 }
 
-
 .other-players {
 	font-size: 14px;
-    color: hsla(0,0%,100%,.6);
-    font-weight: 500;
-    margin-top: 4px;
+	color: hsla(0, 0%, 100%, 0.6);
+	font-weight: 500;
+	margin-top: 4px;
 }
-
 
 .footer {
 	background: transparent;
@@ -460,4 +456,20 @@ video {
 	max-width: 1600px;
 	margin: 0 auto;
 	min-width: 500px;
+}
+
+.auth-box {
+	width: 480px;
+	padding: 40px;
+	font-size: 18px;
+	color: #72767d;
+	background: #36393f;
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 0px; 
+	background: transparent;
 }

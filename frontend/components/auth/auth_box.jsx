@@ -102,7 +102,7 @@ class AuthBox extends React.Component {
 		return (
 			<div>
 				<p>Discord Image in top left</p>
-				<form onSubmit={this.handleSubmit}>
+				<form className="auth-box" onSubmit={this.handleSubmit}>
 					<br />
 					<div>
 						{formFields}
