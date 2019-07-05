@@ -244,10 +244,12 @@ video {
 	text-align: center;
 	justify-content: center;
 	padding: 72px 0;
+	min-height: 100vh;
+	font-weight: 400;
+	font-size: 100%;
 }
 
 .welcome {
-	display: hidden;
 	box-sizing: border-box;
 	padding: 72px 50px 0;
 	max-width: 1200px;
@@ -274,15 +276,14 @@ video {
 	margin-top: 12px;
 }
 
-.splash-buttons {
+.splash-wrapper {
 	display: flex;
 	justify-content: center;
 	flex: 1;
 }
 
-.demo-holder {
+.splash-buttons {
 	font-size: 15px;
-	display: -ms-flexbox;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -290,31 +291,65 @@ video {
 	padding: 0;
 	position: relative;
 	z-index: 1;
-	border-radius: 3px;
-	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
-	margin-right: 40px;
-	height: 45px;
 	width: 250px;
+	height: 45px;
+	margin-right: 40px;
 }
 
-.demo-login {
-	flex: 1 1 auto;
-	border-radius: 3px;
+.button-wrapper {
 	background: #fff;
 	border: 0;
-	color: inherit;
 	cursor: pointer;
-	font-size: inherit;
-	font-weight: inherit;
 	height: 100%;
 	outline: none;
 	position: relative;
 	top: -1px;
 	width: 250px;
-	box-sizing: border-box;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
+}
+
+.demo-login {
+	background: #fff;
+	border: 0;
+	cursor: pointer;
+	height: 100%;
+	outline: none;
+	position: relative;
+	top: -1px;
+	width: 250px;
+	font-weight: 500;
+	line-height: 1.15;
+	font-size: inherit;
+	font-style: inherit;
+	font-family: inherit;
+}
+
+.open-button {
+	border-radius: 3px;
+	background: #7289da;
+	border: 0;
+	cursor: pointer;
+	height: 100%;
+	outline: none;
+	position: relative;
+	top: -1px;
+	width: 250px;
+	font-weight: 500;
+	line-height: 1.15;
+	color: #fff;
+	font-size: inherit;
+	font-style: inherit;
+	font-family: inherit;
+}
+
+.splash-background-wrapper {
+	width: 100%;
+	max-width: 100%;
+	padding: 0;
+}
+
+.splash-background {
+	position: relative;
+	height: 638px;
+	overflow: hidden;
+	background-image: url("splash");
 }

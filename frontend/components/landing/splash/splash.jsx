@@ -44,13 +44,13 @@ class Splash extends React.Component {
 
 		if (!opened) {
 			splash = (
-				<div>
+				<div className="splash-wrapper">
 					<div className="splash-buttons">
-						<div className="demo-login">
-							<button className="demo-login" onClick={this.demoLogin}>
-								Demo Login
-							</button>
-						</div>
+						<button className="demo-login" onClick={this.demoLogin}>
+							Demo Login
+						</button>
+					</div>
+					<div className="splash-buttons">
 						<OpenButton
 							currentUser={this.currentUser}
 							openUsernameField={this.openUsernameField}
@@ -60,15 +60,17 @@ class Splash extends React.Component {
 			);
 		} else {
 			splash = (
-				<form onSubmit={this.newDummyUser}>
-					<input type="text" placeholder="enter a username"></input>
-					<input type="submit" value="Some Arrow" />
-					<Link to={`/login/`}>Already have an account? </Link>
-				</form>
+				<div className="splash-wrapper">
+					<form onSubmit={this.newDummyUser}>
+						<input type="text" placeholder="enter a username"></input>
+						<input type="submit" value="Some Arrow" />
+						<Link to={`/login/`}>Already have an account? </Link>
+					</form>
+				</div>
 			);
 		}
 		return (
-			<section class="hero">
+			<section className="hero">
 				<div className="welcome">
 					<h1 className="elevator">It's time to ditch Skype and TeamSpeak.</h1>
 					<p className="pitch">
@@ -76,8 +78,9 @@ class Splash extends React.Component {
 						works on both your desktop and phone. Stop paying for TeamSpeak
 						servers and hassling with Skype. Simplify your life.
 					</p>
-					{splash}
+				{splash}
 				</div>
+				<div className="splash-background"></div>
 			</section>
 		);
 	}
