@@ -8,7 +8,7 @@ import HomeContainer from "./home/home_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
-	<div  className="splash">
+	<div className="splash">
 		<Switch>
 			<AuthRoute exact path="/login" component={LoginContainer} />
 			<AuthRoute exact path="/register" component={RegisterContainer} />

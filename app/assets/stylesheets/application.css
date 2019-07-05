@@ -102,12 +102,15 @@ video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	list-style: none;
 }
 
 .splash {
-	background: #23272a;
+	background-color: #26262b;
 	min-height: 100vh;
 	overflow: hidden;
+	background-repeat: no-repeat;
+	width: 100%;
 }
 
 .nav-anchor {
@@ -161,5 +164,26 @@ video {
 	height: 36px;
 }
 
+.nav-dropdowns {
+	align-items: center;
+	list-style: none;
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: row;
+	padding: 0;
+	margin: 0;
+	min-height: 56px;
+}
+.nav-list-item {
+	font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	margin-right: 8px;
+	padding: 15px 10px;
+}
 
-.nav-dropdowns
+.nav-right {
+	display: flex;
+	align-items: center;
+	flex: 0 1 auto;
+	margin-left: auto;
+}

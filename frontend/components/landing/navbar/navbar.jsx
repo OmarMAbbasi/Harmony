@@ -21,18 +21,51 @@ class Navbar extends React.Component {
 		return (
 			<header className="nav-anchor">
 				<nav className="nav-desktop">
-					<div class="nav-logo">
+					<div className="nav-logo">
 						<Link to="/">
 							<div className="nav-icon-container">
-								<div>Incoming Gamepad</div>
-								<div>Incoming Discord</div>
+								<img
+									id="nav-discord"
+									className="nav-discord"
+									src={window.images.longLogo}
+								/>
 							</div>
 						</Link>
 					</div>
-					<ul>
-						<li>Navbar list</li>
-						<li>Navbar list</li>
-						<li>Navbar list</li>
+					<ul className="nav-dropdowns">
+						<li className="nav-list-item"></li>
+						<li className="nav-list-item"></li>
+						<li className="nav-list-item"></li>
+					</ul>
+					<ul className="nav-right">
+						<li className="social-media">
+							<a href="">
+								<img
+									id="twitter"
+									className="social-media-image"
+									src={window.images.twitter}
+								/>
+							</a>
+						</li>
+						<li className="social-media">
+							<a href="">
+								<img
+									id="facebook"
+									className="social-media-image"
+									src={window.images.facebook}
+								/>
+							</a>
+						</li>
+						<li className="social-media">
+							<a href="">
+								<img
+									id="instagram"
+									className="social-media-image"
+									src={window.images.instagram}
+								/>
+							</a>
+						</li>
+						<li></li>
 					</ul>
 
 					<Link to={this.path}>
