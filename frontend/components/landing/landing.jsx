@@ -9,7 +9,7 @@ import Footer from "./footer/footer_container";
 
 const Landing = ({ currentUser }) => {
 	return (
-		<div>
+		<div  className="landing" >
 			<Navbar />
 			<Splash currentUser={currentUser}/>
 			<Footer />

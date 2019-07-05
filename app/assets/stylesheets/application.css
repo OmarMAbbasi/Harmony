@@ -105,15 +105,18 @@ video {
 	list-style: none;
 	font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-decoration: none;
+	display: block;
 }
 
 .root {
 }
 
-.splash {
-	background-color: #202225;
+.landing {
+	background-color: #2a2b2f;
 	min-height: 100vh;
 	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: contain;
 	height: 100%;
 }
 
@@ -244,7 +247,6 @@ video {
 	text-align: center;
 	justify-content: center;
 	padding: 72px 0;
-	min-height: 100vh;
 	font-weight: 400;
 	font-size: 100%;
 }
@@ -345,11 +347,117 @@ video {
 	width: 100%;
 	max-width: 100%;
 	padding: 0;
+	display: flex;
+	justify-content: center;
 }
 
 .splash-background {
 	position: relative;
 	height: 638px;
-	overflow: hidden;
 	background-image: url("splash");
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+.splash-register-wrapper {
+	display: flex;
+	justify-content: center;
+	background-color: #7289da;
+}
+
+.splash-register-form {
+	margin: 0;
+	color: #7289da;
+	background-color: transparent;
+	border-radius: 3px;
+	display: flex;
+	width: 400px;
+}
+
+.splash-username-input {
+	color: #202225;
+	width: 400px;
+	height: 45px;
+	display: block;
+	border-radius: 3px;
+	font-weight: 400;
+	padding: 0 24px;
+	font-size: 14px;
+	outline: none;
+	flex-grow: 1;
+	border: 0;
+}
+
+.splash-register-button {
+	box-shadow: none;
+	background-color: transparent;
+	color: #fff;
+	text-indent: 60px;
+	width: 60px;
+	text-align: center;
+	bottom: 0;
+	right: 0;
+	border-radius: 3px;
+	border-color: transparent;
+	background-image: url("submit-arrow.svg");
+	background-size: 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.login-prompt {
+	color: hsla(0, 0%, 100%, 0.6);
+	font-size: 14px;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+.landing-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.join-button {
+	position: relative;
+	padding: 16px;
+	height: 15px;
+	border-radius: 3px;
+	font-size: 15px;
+	line-height: 15px;
+	cursor: pointer;
+	background-color: #7289da;
+}
+
+.ready-yet {
+	font-size: 26px;
+	color: #fff;
+	line-height: 34px;
+}
+
+
+.other-players {
+	font-size: 14px;
+    color: hsla(0,0%,100%,.6);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+
+.footer {
+	background: transparent;
+	position: relative;
+	z-index: 1;
+	padding: 100px;
+}
+
+.footer-box {
+	display: flex;
+	max-width: 1600px;
+	margin: 0 auto;
+	min-width: 500px;
 }

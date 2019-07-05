@@ -61,11 +61,33 @@ class Splash extends React.Component {
 		} else {
 			splash = (
 				<div className="splash-wrapper">
-					<form onSubmit={this.newDummyUser}>
-						<input type="text" placeholder="enter a username"></input>
-						<input type="submit" value="Some Arrow" />
-						<Link to={`/login/`}>Already have an account? </Link>
-					</form>
+					<div>
+						<div className="splash-register-wrapper">
+							<form
+								className="splash-register-form"
+								onSubmit={this.newDummyUser}
+							>
+								<input
+									className="splash-username-input"
+									type="text"
+									placeholder="enter a username"
+								></input>
+								<input className="splash-register-button" type="submit" />
+							</form>
+						</div>
+						<Link
+							className="login-prompt"
+							to={`/login/`}
+							style={{
+								textDecoration: "none",
+								color: "#7289da",
+								fontSize: "14px",
+								padding: "5px"
+							}}
+						>
+							Already Have An Account?
+						</Link>
+					</div>
 				</div>
 			);
 		}
@@ -78,9 +100,11 @@ class Splash extends React.Component {
 						works on both your desktop and phone. Stop paying for TeamSpeak
 						servers and hassling with Skype. Simplify your life.
 					</p>
-				{splash}
+					{splash}
 				</div>
-				<div className="splash-background"></div>
+				<div className="splash-background-wrapper">
+					<img id='splash-background' className='splash-background' src={window.images.splash} />
+				</div>
 			</section>
 		);
 	}
