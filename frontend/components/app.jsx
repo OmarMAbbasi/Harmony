@@ -18,3 +18,7 @@ const App = () => (
 );
 
 export default App;
+
+import HomeContainer from './home/home_container';
+			<Route exact path="/home/" component={HomeContainer} />
+
