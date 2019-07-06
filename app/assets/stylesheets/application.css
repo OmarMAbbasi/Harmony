@@ -108,13 +108,6 @@ video {
 	display: block;
 }
 
-html,
-body {
-	overflow: hidden;
-	-webkit-overflow-scrolling: touch;
-}
-.root {
-}
 
 .landing {
 	background-color: #2a2b2f;
@@ -410,6 +403,7 @@ body {
 	background-position: center;
 }
 
+
 .login-prompt {
 	color: hsla(0, 0%, 100%, 0.6);
 	font-size: 14px;
@@ -419,6 +413,7 @@ body {
 
 .landing-footer {
 	position: absolute;
+	z-index: -1;
 	bottom: 0;
 	left: 0;
 	height: 100%;
@@ -512,7 +507,7 @@ body {
 	max-height: 1000px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 	margin: 0;
 }
 
@@ -566,6 +561,7 @@ body {
 .auth-field {
 	background-color: rgba(0, 0, 0, 0.1);
 	border-color: rgba(0, 0, 0, 0.3);
+	color: white;
 	padding: 10px;
 	height: 40px;
 	box-sizing: border-box;
@@ -575,6 +571,7 @@ body {
 	border-radius: 3px;
 	font-size: 16px;
 	outline: 0;
+	margin-bottom: 20px;
 }
 
 .auth-field:focus {
@@ -596,9 +593,32 @@ body {
 	min-height: 44px;
 	border: none;
 	border-radius: 3px;
-	font-size: 14px;
 	font-weight: 500;
-	line-height: 16px;
 	padding: 2px 16px;
 	margin-top: 20px;
+}
+
+.auth-demo {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	background-color: white;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 8px;
+	width: 100%;
+	min-width: 130px;
+	min-height: 44px;
+	border: none;
+	border-radius: 3px;
+	font-weight: 500;
+	padding: 2px 16px;
+	margin-top: 20px;
+}
+
+
+.error-text {
+	color: red;
 }

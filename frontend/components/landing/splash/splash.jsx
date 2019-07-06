@@ -1,6 +1,6 @@
 import React from "react";
 import { register } from "../../../actions/session_actions";
-import { Link, Redirect, withRouter } from "react-router-dom";
+import { Route, Link, Redirect, withRouter } from "react-router-dom";
 import OpenButton from "./open_button";
 
 class Splash extends React.Component {
@@ -12,13 +12,22 @@ class Splash extends React.Component {
 		this.demoLogin = this.demoLogin.bind(this);
 		this.openUsernameField = this.openUsernameField.bind(this);
 		this.state = { opened: false };
+		this.state.username = "";
+	}
+
+	update(field) {
+		return e =>
+			this.setState({
+				[field]: e.currentTarget.value
+			});
 	}
 
 	newDummyUser(e) {
 		e.preventDefault();
-		console.log(
-			"Create new user. Mount main container and continue registration."
-		);
+		this.props.history.push({
+			pathname: "/register/",
+			username: this.state.username
+		});
 	}
 	demoLogin(e) {
 		e.preventDefault();
@@ -68,6 +77,9 @@ class Splash extends React.Component {
 								onSubmit={this.newDummyUser}
 							>
 								<input
+									type="text"
+									value={this.state.username}
+									onChange={this.update("username")}
 									className="splash-username-input"
 									type="text"
 									placeholder="enter a username"
@@ -103,7 +115,11 @@ class Splash extends React.Component {
 					{splash}
 				</div>
 				<div className="splash-background-wrapper">
-					<img id='splash-background' className='splash-background' src={window.images.splash} />
+					<img
+						id="splash-background"
+						className="splash-background"
+						src={window.images.splash}
+					/>
 				</div>
 			</section>
 		);

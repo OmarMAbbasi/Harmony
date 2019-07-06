@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { register, login, logout } from "../../../actions/session_actions";
