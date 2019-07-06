@@ -51,7 +51,7 @@ class Splash extends React.Component {
 		const opened = this.state.opened;
 		let splash;
 
-		if (opened) {
+		if (!opened) {
 			splash = (
 				<div className="splash-wrapper">
 					<div className="splash-buttons">
