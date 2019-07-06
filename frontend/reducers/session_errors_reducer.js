@@ -6,6 +6,7 @@ import {
 const sessionErrorsReducer = (oldState = [], action) => {
 	Object.freeze(oldState);
 	let newState = Object.assign({}, oldState);
+	debugger
 	switch (action.type) {
 		case RECEIVE_SESSION_ERRORS:
 			newState = action.errors;
