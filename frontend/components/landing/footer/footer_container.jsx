@@ -19,7 +19,7 @@ const Footer = props => {
 						style={{ color: "white" }}
 						to={`/register/`}
 					>
-						Join Discord
+						Open Discord
 					</Link>
 			</div>
 		</footer>

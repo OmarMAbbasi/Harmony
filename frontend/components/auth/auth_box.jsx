@@ -42,39 +42,36 @@ class AuthBox extends React.Component {
 
 	render() {
 		const usernameField = (
-			<div className="field-wrapper">
-				<h5 className="field-label">USERNAME:</h5>
+			<label>
+				USERNAME:
 				<input
-					className="auth-field"
 					type="text"
 					value={this.state.username}
 					onChange={this.update("username")}
 				/>
-			</div>
+			</label>
 		);
 
 		const emailField = (
-			<div className="field-wrapper">
-				<h5 className="field-label">EMAIL:</h5>
+			<label>
+				EMAIL:
 				<input
-					className="auth-field"
 					type="text"
 					value={this.state.email}
 					onChange={this.update("email")}
 				/>
-			</div>
+			</label>
 		);
 
 		const passwordField = (
-			<div className="field-wrapper">
-				<h5 className="field-label">PASSWORD:</h5>
+			<label>
+				PASSWORD:
 				<input
-					className="auth-field"
 					type="password"
 					value={this.state.password}
 					onChange={this.update("password")}
 				/>
-			</div>
+			</label>
 		);
 
 		let formFields;
@@ -83,10 +80,9 @@ class AuthBox extends React.Component {
 			formFields = (
 				<div>
 					{this.props.title}
-					{this.props.subTitle}
 					{emailField}
 					{passwordField}
-					<input className="auth-button" type="submit" value="Login" />
+					<input type="submit" value="Login" />
 					{this.props.navLink}
 				</div>
 			);
@@ -97,25 +93,22 @@ class AuthBox extends React.Component {
 					{emailField}
 					{usernameField}
 					{passwordField}
-					<input className="auth-button" type="submit" value="Continue" />
+					<input type="submit" value="Continue" />
 					{this.props.navLink}
 				</div>
 			);
 		}
 
 		return (
-			<div className="auth-splash">
-				<div className="auth-anchor">
-					<Link className="auth-logo" to="/home/"></Link>
-					<form className="auth-box" onSubmit={this.handleSubmit}>
-						<div className="form-wrapper">
-							<div>
-								{formFields}
-								{this.handleErrors()}
-							</div>
-						</div>
-					</form>
-				</div>
+			<div>
+				<p>Discord Image in top left</p>
+				<form className="auth-box" onSubmit={this.handleSubmit}>
+					<br />
+					<div>
+						{formFields}
+						{this.handleErrors()}
+					</div>
+				</form>
 			</div>
 		);
 	}
