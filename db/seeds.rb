@@ -14,7 +14,7 @@ User.create!(
     password: "password1234"
   )
   
-100.times do 
+30.times do 
     User.create!(
         username: Faker::Esport.player.gsub(/[@#:`"']/, ""),
         email: Faker::Internet.unique.email,
