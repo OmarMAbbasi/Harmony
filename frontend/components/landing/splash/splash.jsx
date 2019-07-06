@@ -51,7 +51,7 @@ class Splash extends React.Component {
 		const opened = this.state.opened;
 		let splash;
 
-		if (!opened) {
+		if (opened) {
 			splash = (
 				<div className="splash-wrapper">
 					<div className="splash-buttons">
@@ -84,7 +84,15 @@ class Splash extends React.Component {
 									type="text"
 									placeholder="enter a username"
 								></input>
-								<input className="splash-register-button" type="submit" />
+								<div className="register-button-wrapper">
+									<button className="splash-register-button" type="submit">
+										<img
+											className="splash-register-arrow"
+											id="splash-register-arrow"
+											src={window.images.submitArrow}
+										/>
+									</button>
+								</div>
 							</form>
 						</div>
 						<Link
