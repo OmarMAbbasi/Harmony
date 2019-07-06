@@ -352,7 +352,6 @@ video {
 .splash-background {
 	position: relative;
 	height: 638px;
-	background-image: url("splash");
 	background-repeat: no-repeat;
 	height: 100%;
 }
