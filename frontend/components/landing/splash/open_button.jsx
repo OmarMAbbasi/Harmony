@@ -11,7 +11,9 @@ function OpenButton({ openUsernameField, currentUser }) {
 	} else {
 		return (
 			<button className="open-button">
-				<Link to={`/home/`}>Open Discord</Link>
+				<Link style={{ color: "white" }} to={`/home/`}>
+					Open Discord
+				</Link>
 			</button>
 		);
 	}

@@ -8,11 +8,15 @@ const mapStateToProps = ({ errors }) => {
 	return {
 		errors: errors.session,
 		formType: "login",
-		navLink: <NavLink to="/register">Register</NavLink>,
+		navLink: <NavLink style={{ color: '#7289da'}} to="/register">Register</NavLink>,
 		title: (
-			<div>
+			<div className="login-title">
 				<h2>Welcome Back!</h2>
-				<h3>We're so excited to see you again!</h3>
+			</div>
+		),
+		subTitle: (
+			<div>
+				<h3 className="login-subtitle">We're so excited to see you again!</h3>
 			</div>
 		)
 	};
