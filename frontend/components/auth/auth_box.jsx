@@ -10,10 +10,10 @@ class AuthBox extends React.Component {
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
-	
-	componentDidMount(){
-		if(this.props.history.location.username){
-			this.setState({username: this.props.history.location.username})
+
+	componentDidMount() {
+		if (this.props.history.location.username) {
+			this.setState({ username: this.props.history.location.username });
 		}
 	}
 
@@ -27,7 +27,9 @@ class AuthBox extends React.Component {
 		return (
 			<ul>
 				{this.props.errors.map((error, i) => (
-					<li className="error-text" key={`error-${i}`}>{error}</li>
+					<li className="error-text" key={`error-${i}`}>
+						{error}
+					</li>
 				))}
 			</ul>
 		);
@@ -110,9 +112,16 @@ class AuthBox extends React.Component {
 		}
 
 		return (
-			<div className="auth-splash">
+			<div className="auth-anchor">
+				<img
+					id="auth-splash"
+					src={window.images.authSplash}
+					className="auth-splash"
+				></img>
 				<div className="auth-anchor">
-					<Link className="auth-logo" to="/"></Link>
+					<Link className="auth-logo-link" to="/">
+						<img id="longLogo" src={window.images.longLogo} className="auth-logo"/>
+					</Link>
 					<form className="auth-box" onSubmit={this.handleSubmit}>
 						<div className="form-wrapper">
 							<div>

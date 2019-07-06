@@ -397,7 +397,7 @@ video {
 	text-align: center;
 	border-radius: 3px;
 	padding: 0px;
-	cursor: pointer;	
+	cursor: pointer;
 }
 
 .register-button-wrapper {
@@ -488,17 +488,21 @@ video {
 	background: transparent;
 }
 
-.auth-splash {
+.auth-anchor {
 	position: relative;
-	background-image: url("auth-splash.jpg");
-
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
 	min-height: 100vh;
 }
-
+.auth-splash {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
 .auth-wrapper {
 	width: 100%;
 	text-align: center;
@@ -521,15 +525,19 @@ video {
 	margin: 0;
 }
 
-.auth-logo {
+.auth-logo-link {
 	width: 130px;
 	height: 36px;
 	top: 60px;
 	left: 60px;
 	margin-left: 0;
 	position: absolute;
-	background: url("long-logo.svg") no-repeat;
 }
+
+.auth-logo {
+	position: relative;	
+}
+
 
 .login-title {
 	text-align: center;
