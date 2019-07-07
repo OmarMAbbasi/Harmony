@@ -1,6 +1,6 @@
 //Library Imports
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 
 //Local Imports
 import Navbar from "./navbar/navbar_container";
