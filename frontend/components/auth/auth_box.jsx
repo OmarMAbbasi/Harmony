@@ -24,6 +24,7 @@ class AuthBox extends React.Component {
 			});
 	}
 	handleErrors() {
+		debugger;
 		return (
 			<ul>
 				{this.props.errors.map((error, i) => (
