@@ -11,6 +11,12 @@ class AuthBox extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	componentDidMount() {
+		if (this.props.history.location.username) {
+			this.setState({ username: this.props.history.location.username });
+		}
+	}
+
 	update(field) {
 		return e =>
 			this.setState({
@@ -21,7 +27,9 @@ class AuthBox extends React.Component {
 		return (
 			<ul>
 				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>{error}</li>
+					<li className="error-text" key={`error-${i}`}>
+						{error}
+					</li>
 				))}
 			</ul>
 		);
@@ -42,36 +50,39 @@ class AuthBox extends React.Component {
 
 	render() {
 		const usernameField = (
-			<label>
-				USERNAME:
+			<div className="field-wrapper">
+				<h5 className="field-label">USERNAME:</h5>
 				<input
+					className="auth-field"
 					type="text"
 					value={this.state.username}
 					onChange={this.update("username")}
 				/>
-			</label>
+			</div>
 		);
 
 		const emailField = (
-			<label>
-				EMAIL:
+			<div className="field-wrapper">
+				<h5 className="field-label">EMAIL:</h5>
 				<input
+					className="auth-field"
 					type="text"
 					value={this.state.email}
 					onChange={this.update("email")}
 				/>
-			</label>
+			</div>
 		);
 
 		const passwordField = (
-			<label>
-				PASSWORD:
+			<div className="field-wrapper">
+				<h5 className="field-label">PASSWORD:</h5>
 				<input
+					className="auth-field"
 					type="password"
 					value={this.state.password}
 					onChange={this.update("password")}
 				/>
-			</label>
+			</div>
 		);
 
 		let formFields;
@@ -80,9 +91,10 @@ class AuthBox extends React.Component {
 			formFields = (
 				<div>
 					{this.props.title}
+					{this.props.subTitle}
 					{emailField}
 					{passwordField}
-					<input type="submit" value="Login" />
+					<input className="auth-button" type="submit" value="Login" />
 					{this.props.navLink}
 				</div>
 			);
@@ -93,22 +105,32 @@ class AuthBox extends React.Component {
 					{emailField}
 					{usernameField}
 					{passwordField}
-					<input type="submit" value="Continue" />
+					<input className="auth-button" type="submit" value="Continue" />
 					{this.props.navLink}
 				</div>
 			);
 		}
 
 		return (
-			<div>
-				<p>Discord Image in top left</p>
-				<form className="auth-box" onSubmit={this.handleSubmit}>
-					<br />
-					<div>
-						{formFields}
-						{this.handleErrors()}
-					</div>
-				</form>
+			<div className="auth-anchor">
+				<img
+					id="auth-splash"
+					src={window.images.authSplash}
+					className="auth-splash"
+				></img>
+				<div className="auth-anchor">
+					<Link className="auth-logo-link" to="/">
+						<img id="longLogo" src={window.images.longLogo} className="auth-logo"/>
+					</Link>
+					<form className="auth-box" onSubmit={this.handleSubmit}>
+						<div className="form-wrapper">
+							<div>
+								{formFields}
+								{this.handleErrors()}
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
 		);
 	}

@@ -4,6 +4,7 @@ import { Switch, Router, Route, Link } from "react-router-dom";
 import LandingContainer from "./landing/landing";
 import RegisterContainer from "./auth/register_container";
 import LoginContainer from "./auth/login_container";
+
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
