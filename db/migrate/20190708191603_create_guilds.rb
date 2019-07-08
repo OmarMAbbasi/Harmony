@@ -3,7 +3,7 @@ class CreateGuilds < ActiveRecord::Migration[5.2]
     create_table :guilds do |t|
       t.string :name, null: false
       t.integer :owner_id, null: false
-      t.boolean :is_home?, :default => false
+      t.boolean :is_home?, default: false
 
       t.timestamps
     end
