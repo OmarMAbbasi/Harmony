@@ -12,9 +12,12 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  home_id         :integer          not null
 #
 
 class User < ApplicationRecord
+
+  ##Validations
   validates :username, uniqueness: { scope: [:digits] }
   validates :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
@@ -26,6 +29,26 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
+  ##Associations
+
+  belongs_to :home, 
+    class_name: :Guild, 
+    foreign_key: :home_id
+
+  has_many :guild_memberships
+  belongs_to :guilds,
+    through: :guild_memberships
+
+  has_many :channel_subscriptions
+  belongs_to :channels,
+    through: :channel_subscriptions,
+    source: :channel_id
+
+  has_many :guilds_owned,
+    class_name: :Guild,
+    foreign_key: :owner_id
+
+  ##Methods
   def username_constraints
     if username =~ /[@#:`"']/
       @errors.add(:user, 'username cannot contain characters (@, #, :, `, ", or \'')
@@ -38,7 +61,6 @@ class User < ApplicationRecord
     user = User.find_by(email: email)
     return nil if user.nil?
     return nil unless user.valid_password?(password)
-
     user
   end
 

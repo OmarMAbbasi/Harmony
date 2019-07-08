@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: guilds
+#
+#  id         :bigint           not null, primary key
+#  is_home    :boolean          default(FALSE)
+#  name       :string           not null
+#  owner_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_home: false
+  name: MyString
+  owner_id: 1
+
+two:
+  is_home: false
+  name: MyString
+  owner_id: 1

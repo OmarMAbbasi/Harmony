@@ -14,6 +14,5 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     add_index :users, %i[username digits], unique: true
     add_index :users, :session_token, unique: true
     add_index :users, :email, unique: true
-    # Ex:- add_index("admin_users", "username")
   end
 end
