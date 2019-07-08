@@ -3,6 +3,12 @@
 # Table name: guilds
 #
 #  id         :bigint           not null, primary key
+#  name       :string           not null
+#  owner_id   :integer          not null
+#  is_home?   :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 <<<<<<< Updated upstream
 #  is_home    :boolean          default(FALSE)
 #  name       :string           not null

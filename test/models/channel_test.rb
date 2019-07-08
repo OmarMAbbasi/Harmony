@@ -3,6 +3,12 @@
 # Table name: channels
 #
 #  id         :bigint           not null, primary key
+#  name       :string
+#  guild_id   :integer
+#  position   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 <<<<<<< Updated upstream
 #  name       :string
 #  guild_id   :integer
