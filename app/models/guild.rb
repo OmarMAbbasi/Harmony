@@ -22,10 +22,10 @@ class Guild < ApplicationRecord
 
     has_many :channels
 
-    # def self.create_home(user)
-    #     home = Guild.new(name: user.username, owner_id: user.id, is_home?: true)
-    #     home.save!
-    # end
+    def self.create_home(user)
+        home = Guild.new(name: user.username, owner_id: user.id, is_home?: true)
+        home.save!
+    end
 
 
 end

@@ -25,6 +25,7 @@ class User < ApplicationRecord
   validate :username_constraints
 
   before_create :ensure_user_tag
+  after_create :create_home
   after_initialize :ensure_session_token
   attr_reader :password
 
@@ -75,6 +76,10 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
+  end
+
+  def create_home 
+    Guild.create_home(self)
   end
 
   def ensure_user_tag

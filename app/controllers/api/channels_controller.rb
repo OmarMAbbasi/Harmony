@@ -29,13 +29,12 @@ end
 
 
 def delete 
-    if @channel.owner_id == current_user.id 
+    if @channel 
         @channel.destroy
         render '/api/channel/show'
     end
 end
     private
-
     def set_channel
         @channel = Channel.find(params[:id])
     rescue
