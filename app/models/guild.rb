@@ -25,6 +25,7 @@ class Guild < ApplicationRecord
     def self.create_home(user)
         home = Guild.new(name: user.username, owner_id: user.id, is_home?: true)
         home.save!
+        GuildMembership.new(guild_id: home.id, user_id: user.id).save
     end
 
 

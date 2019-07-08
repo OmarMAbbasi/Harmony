@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2019_07_08_192549) do
     t.boolean "is_home?", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_guilds_on_owner_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

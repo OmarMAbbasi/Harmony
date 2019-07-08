@@ -1,18 +1,19 @@
 class Api::GuildsController < ApplicationController
   before_action :set_guild, only: [:show, :update, :destroy]
 
-  
-    def show
+      def show
         if @guild
-          render '/api/guild/show'
+          render `/api/guilds/show`
+        else 
+          render json: @guild.errors.full_messages, status: 422
         end
     end
 
   def create
     @guild = Guild.new(guild_params)
-    if @user.save
-      login(@guild)
-      render '/api/guild/show'
+    if @guild.save
+      GuildMembership.new(guild_id: @guild.id, user_id: current_user.id).save
+      render '/api/guilds/show'
     else
       render json: @guild.errors.full_messages, status: 422
     end
@@ -31,7 +32,7 @@ end
 def delete 
     if @guild.owner_id == current_user.id 
         @guild.destroy
-        render '/api/guild/show'
+        render '/api/guilds/show'
     end
 end
     private

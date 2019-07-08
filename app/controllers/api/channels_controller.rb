@@ -4,15 +4,16 @@ class Api::ChannelsController < ApplicationController
   
     def show
         if @channel
-          render '/api/channel/show'
+          render `/api/channels/show`
+        else 
+          render json: @channel.errors.full_messages, status: 422
         end
     end
 
   def create
     @channel = Channel.new(channel_params)
-    if @user.save
-      login(@channel)
-      render '/api/channel/show'
+    if @channel.save
+      render '/api/channels/show'
     else
       render json: @channel.errors.full_messages, status: 422
     end
@@ -31,7 +32,7 @@ end
 def delete 
     if @channel 
         @channel.destroy
-        render '/api/channel/show'
+        render '/api/channels/show'
     end
 end
     private
