@@ -3,9 +3,15 @@
 # Table name: guilds
 #
 #  id         :bigint           not null, primary key
+<<<<<<< Updated upstream
 #  is_home    :boolean          default(FALSE)
 #  name       :string           not null
 #  owner_id   :integer          not null
+=======
+#  name       :string           not null
+#  owner_id   :integer          not null
+#  is_home?   :boolean          default(FALSE)
+>>>>>>> Stashed changes
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -13,11 +19,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< Updated upstream
   is_home: false
+=======
+  is_home?: false
+>>>>>>> Stashed changes
   name: MyString
   owner_id: 1
 
 two:
+<<<<<<< Updated upstream
   is_home: false
+=======
+  is_home?: false
+>>>>>>> Stashed changes
   name: MyString
   owner_id: 1

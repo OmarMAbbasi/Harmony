@@ -29,6 +29,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   attr_reader :password
 
+<<<<<<< Updated upstream
   ##Associations
 
   belongs_to :home, 
@@ -49,6 +50,22 @@ class User < ApplicationRecord
     foreign_key: :owner_id
 
   ##Methods
+=======
+  has_one :home,
+    class_name: :Guild,
+    foreign_key: :owner_id
+
+    has_many :guild_memberships
+
+    has_many :guilds,
+        through: :guild_memberships,
+        source: :guild
+
+        
+
+
+
+>>>>>>> Stashed changes
   def username_constraints
     if username =~ /[@#:`"']/
       @errors.add(:user, 'username cannot contain characters (@, #, :, `, ", or \'')
