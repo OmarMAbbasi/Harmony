@@ -756,6 +756,8 @@ video {
 	font-family: inherit;
 }
 
+
+/* TODO: Change color back to transparant */
 .user-anchor-button {
 	color: #fff;
 	background: dark-gray;
