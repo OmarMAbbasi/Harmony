@@ -17,7 +17,7 @@ class UserAnchor extends React.Component {
 	handleLogout(e) {
 		e.preventDefault();
 		clearTimeout(this.blur);
-		this.props.logout().then(() => this.props.history.push("/"));
+		this.props.logout()
 		return <Route to="/" />;
 	}
 
@@ -47,7 +47,7 @@ class UserAnchor extends React.Component {
 					<div className="user-tag-digits">#{this.currentUser.digits}</div>
 				</div>
 				<div className="anchor-buttons-wrapper">
-					<div className={logout} onClick={this.handleLogout}>
+					<div className={this.state.logout} onClick={this.handleLogout}>
 						Log Out
 					</div>
 					<button
