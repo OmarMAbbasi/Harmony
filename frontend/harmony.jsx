@@ -9,8 +9,7 @@ import { fetchGuild } from './util/guild_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
 	const root = document.getElementById("root");
-	// const store = configureStore();
-	// ReactDOM.render(<h1>ReactIsWorking</h1>, root);
+
 	let store
 	if (window.currentUser) {
 		const preloadedState = {

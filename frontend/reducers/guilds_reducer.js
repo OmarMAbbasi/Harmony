@@ -4,12 +4,16 @@ import {
 	RECEIVE_GUILD_ERRORS
 } from "../actions/guild_actions";
 
-const guildsReducer = (oldState = {}, action) => {
+const guildsReducer = (oldState, action) => {
+	if (!oldState) {
+		oldState = {};
+	}
 	Object.freeze(oldState);
+
 	let newState = Object.assign({}, oldState);
 	switch (action.type) {
 		case GET_GUILD:
-			newState[action.guild.id] = action.guild;
+			Object.assign(newState, { [action.guild.id]:action.guild});
 			return newState;
 		case DELETE_GUILD:
 			newState = {};

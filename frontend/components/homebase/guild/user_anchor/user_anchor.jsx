@@ -1,11 +1,17 @@
 import React from "react";
 import { Route, Link, Switch, Redirect, withRouter } from "react-router-dom";
-import SidebarGuild from "./sidebar_guild";
 
-class Sidebar extends React.Component {
+class UserAnchor extends React.Component {
 	constructor(props) {
 		super(props);
 		this.currentUser = this.props.currentUser;
+		this.buttonFocus = this.buttonFocus.bind(this);
+		this.buttonBlur = this.buttonBlur.bind(this);
+		this.handleLogout = this.handleLogout.bind(this);
+		this.state = {
+			logout: "hidden-logout-button"
+		};
+		this.blur;
 	}
 
 	handleLogout(e) {
@@ -62,4 +68,4 @@ class Sidebar extends React.Component {
 	}
 }
 
-export default Sidebar;
+export default UserAnchor;

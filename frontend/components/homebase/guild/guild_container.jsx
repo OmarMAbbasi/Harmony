@@ -1,24 +1,28 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, NavLink, withRouter } from "react-router-dom";
+import { Link, NavLink, withRouter, Redirect, Route } from "react-router-dom";
 import Guild from "./guild";
+import { logout } from "../../../actions/session_actions";
+import { fetchGuild } from "../../../actions/guild_actions";
 
-const mapStateToProps = (state, ownProps) => {
-	let currentUserId = state.session.id;
-	return {	
-		currentUser: state.entities.users[currentUserId]
+const mapStateToProps = (
+	{ errors, session: { id }, entities: { users } },
+	ownProps
+) => {
+	return {
+		errors: errors,
+		currentUser: users[id]
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
+		logout: () => dispatch(logout()),
 		fetchGuild: guildId => dispatch(fetchGuild(guildId))
 	};
 };
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		mapDispatchToProps
-	)(Guild)
-);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Guild);
