@@ -813,7 +813,7 @@ video {
 }
 
 .home-logout-button:hover {
-	background-color: rgb(240, 71, 71, 0.1);
+	background-color: rgba(240, 71, 71, 0.1);
 	color: rgb(240, 71, 71);
 	display: flex;
 	cursor: pointer;
