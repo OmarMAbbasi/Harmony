@@ -5,6 +5,7 @@ import LandingContainer from "./landing/landing";
 import HomeContainer from "./homebase/home_container";
 import RegisterContainer from "./auth/register_container";
 import LoginContainer from "./auth/login_container";
+import GuildContainer from "./homebase/guild/guild_container";
 
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 

@@ -1,21 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, NavLink, withRouter } from "react-router-dom";
-import Home from "./home";
+import Guild from "./guild";
 
 const mapStateToProps = (state, ownProps) => {
-	currentUserId = state.session.id;
-	return {
-		currentUser: users[currentUserId],
-		home: state.session.home,
-		guilds: state.session.guilds
+	let currentUserId = state.session.id;
+	return {	
+		currentUser: state.entities.users[currentUserId]
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-        fetchGuild: guildId => dispatch(fetchGuild(guildId))
-        
+		fetchGuild: guildId => dispatch(fetchGuild(guildId))
 	};
 };
 
@@ -23,5 +20,5 @@ export default withRouter(
 	connect(
 		mapStateToProps,
 		mapDispatchToProps
-	)(Home)
+	)(Guild)
 );

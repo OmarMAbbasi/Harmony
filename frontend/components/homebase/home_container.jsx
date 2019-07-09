@@ -4,7 +4,10 @@ import { Link, NavLink, withRouter, Redirect, Route } from "react-router-dom";
 import Home from "./home";
 import { logout } from "../../actions/session_actions";
 
-const mapStateToProps = ({ errors, session: { id }, entities: { users } }) => {
+const mapStateToProps = (
+	{ errors, session: { id }, entities: { users } },
+	ownProps
+) => {
 	return {
 		errors: errors,
 		currentUser: users[id]
@@ -17,9 +20,7 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		mapDispatchToProps
-	)(Home)
-);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Home);
