@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Router, Route, Link } from "react-router-dom";
 
 import LandingContainer from "./landing/landing";
-import HomeContainer from "./home/home_container";
+import HomeContainer from "./homebase/home_container";
 import RegisterContainer from "./auth/register_container";
 import LoginContainer from "./auth/login_container";
 
