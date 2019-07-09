@@ -8,7 +8,7 @@
 
 User.delete_all
 
-User.create!(
+demo = User.create!(
     username: "demouser",
     email: "demouser@gmail.com",
     password: "password1234"
@@ -20,4 +20,32 @@ User.create!(
         email: Faker::Internet.unique.email,
         password: Faker::Internet.password(8)
     )
+end
+
+10.times do 
+    guild = Guild.create!(
+        name: Faker::Game.title,
+        owner_id: 0
+    )
+    5.times do
+    Channel.create!(
+        name: Faker::Lorem.word,
+        guild_id: guild.id
+        )
+    end
+    GuildMembership.create!(guild_id: guild.id, user_id: demo.id)
+end
+
+3.times do 
+    guild = Guild.create!(
+        name: Faker::Game.title,
+        owner_id: demo.id
+    )
+    5.times do
+        Channel.create!(
+            name: Faker::Lorem.word,
+            guild_id: guild.id
+            )
+    end
+    GuildMembership.create!(guild_id: guild.id, user_id: demo.id)
 end

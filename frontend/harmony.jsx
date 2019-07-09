@@ -5,6 +5,7 @@ import Root from "./components/root";
 //Testing
 import * as SessionAPIUtil from "./util/session_api_util";
 import configureStore from "./store/store";
+import { fetchGuild } from './util/guild_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
 	const root = document.getElementById("root");
@@ -30,4 +31,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.logout = SessionAPIUtil.logout;
 	window.getState = store.getState;
 	window.dispatch = store.dispatch;
+	window.fetchGuild = fetchGuild;
 });
