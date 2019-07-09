@@ -1,32 +1,26 @@
-// export const create = user =>
-// 	$.ajax({
-// 		method: "POST",
-// 		url: "/api/session",
-// 		data: { user }
-// 	});
+export const fetchGuild = guildId =>
+	$.ajax({
+		method: "GET",
+		url: `/api/guilds/${guildId}`,
+	});
 
-// export const update = user =>
-// 	$.ajax({
-// 		method: "POST",
-// 		url: "/api/users",
-// 		data: { user }
-// 	});
 
-// // export const claim = user =>
-// // 	$.ajax({
-// // 		url: `api/user/${user.id}`,
-// // 		method: "PATCH",
-// // 		data: { user }
-// // 	});
+export const createGuild = guild =>
+	$.ajax({
+		method: "POST",
+		url: "/api/guilds",
+		data: { guild }
+	});
 
-// // export const abandon = id =>
-// // 	$.ajax({
-// // 		url: `api/user/${id}`,
-// // 		method: "DELETE"
-// // 	});
+export const updateGuild = guild =>
+	$.ajax({
+		method: "POST",
+		url: "/api/guilds",
+		data: { guild }
+	});
 
-// export const destroy = () =>
-// 	$.ajax({
-// 		method: "DELETE",
-// 		url: "api/session"
-// 	});
+export const destroyGuild = (guildId) =>
+	$.ajax({
+		method: "DELETE",
+		url: `api/guilds/${guildId}`
+	});

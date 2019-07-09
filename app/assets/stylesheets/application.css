@@ -101,7 +101,6 @@ video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 	list-style: none;
 	font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-decoration: none;
@@ -535,9 +534,8 @@ video {
 }
 
 .auth-logo {
-	position: relative;	
+	position: relative;
 }
-
 
 .login-title {
 	text-align: center;
@@ -638,4 +636,192 @@ video {
 
 .error-text {
 	color: red;
+}
+
+.user-anchor-wrapper {
+	background: rgba(32, 34, 37, 0.3);
+	display: flex;
+	height: 52px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	margin-bottom: 1px;
+	outline: 0;
+	flex-shrink: 0;
+	margin: 0;
+	font-style: inherit;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+.user-avatar-wrapper {
+	margin-right: 10px;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	font-size: 100%;
+	display: block;
+}
+
+.user-avatar {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-clip: padding-box;
+	background-size: 100% 100%;
+	background-color: transparent;
+	background-position: 50%;
+	border-radius: 50%;
+}
+.user-avatar-image {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.user-profile-pic-wrapper {
+	margin: 0;
+	cursor: pointer;
+	flex-shrink: 0;
+	width: 30px;
+	height: 30px;
+	float: left;
+	border-radius: 50%;
+	outline: 0;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.user-tag-wrapper {
+	display: block;
+	flex-grow: 1;
+	outline: 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-right: 4px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	font-size: 100%;
+	background: #202225;
+}
+
+.home-nav {
+	flex: 0 1 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.user-tag-name {
+	color: #b9bbbe;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 18px;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+}
+
+.user-tag-digits {
+	color: #8e9297;
+	font-size: 10px;
+	line-height: 12px;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+}
+
+.user-anchor-button {
+	color: #fff;
+	background: transparent;
+	line-height: 0;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.6;
+	border-radius: 3px;
+	position: relative;
+	border: 0;
+	outline: 0;
+}
+
+.user-anchor-button:focus {
+	outline: 0;
+}
+
+.user-anchor-button:hover {
+	color: #fff;
+	background: rgba(15, 15, 15, 0.3);
+	line-height: 0;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	position: relative;
+	border: 0;
+}
+
+.anchor-buttons-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.hidden-logout-button {
+	display: none;
+}
+
+.home-logout-button {
+	display: flex;
+	color: rgb(240, 71, 71);
+	cursor: pointer;
+	padding: 5px;
+	outline: 1px;
+	border: 1px black;
+}
+
+.home-logout-button:hover {
+	background-color: rgb(240, 71, 71, 0.1);
+	color: rgb(240, 71, 71);
+	display: flex;
+	cursor: pointer;
+	padding: 5px;
+	outline: 1px;
+	border: 1px black;
+}
+
+.hidden {
+	display: none
 }
