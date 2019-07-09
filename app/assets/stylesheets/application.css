@@ -756,11 +756,10 @@ video {
 	font-family: inherit;
 }
 
-
 /* TODO: Change color back to transparant */
 .user-anchor-button {
 	color: #fff;
-	background: dark-gray;
+	background: darkgray;
 	line-height: 0;
 	width: 32px;
 	height: 32px;
@@ -825,5 +824,5 @@ video {
 }
 
 .hidden {
-	display: none
+	display: none;
 }
