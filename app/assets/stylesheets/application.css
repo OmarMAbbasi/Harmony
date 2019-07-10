@@ -513,7 +513,7 @@ video {
 	top: 0;
 	left: 0;
 	min-height: 700px;
-	width: 80%;
+	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	max-width: 1080px;
@@ -868,6 +868,8 @@ video {
 	width: 72px;
 }
 
+
+
 .sidebar-list-item-wrapper {
 	box-sizing: border-box;
 	width: 48px;
@@ -888,7 +890,7 @@ video {
 	height: 48px;
 	position: relative;
 	cursor: pointer;
-	border-radius: 50px;
+	border-radius: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -967,7 +969,7 @@ video {
 	overflow: hidden;
 	position: relative;
 	cursor: pointer;
-	width: 100%;
+	width: 95%;
 }
 
 .channel-item-content {
