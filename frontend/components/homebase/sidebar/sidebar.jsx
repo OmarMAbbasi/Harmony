@@ -12,16 +12,19 @@ class Sidebar extends React.Component {
 		return (
 			<ul className="sidebar-container">
 				<li className="sidebar-list-item">
-					<img
+					<img 
 						className="sidebar-list-item-wrapper"
 						id="transparent"
 						src={window.icons.transparent}
 					/>
 				</li>
+				<li className="sidebar-list-item">
+					<div className="sidebar-separator"></div>
+				</li>
 				<div style={{ overflowY: "scroll" }}>
 					{this.currentUser.guilds.map(guild => (
 						<SidebarGuild key={guild.id} guild={guild} />
-				))}
+					))}
 				</div>
 				<li className='className="sidebar-list-item"'></li>
 			</ul>

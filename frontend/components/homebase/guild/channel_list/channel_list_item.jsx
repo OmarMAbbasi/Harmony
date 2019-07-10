@@ -10,7 +10,6 @@ class ChannelIndexItem extends React.Component {
 		this.state = {
 			color: "#72767d"
 		};
-		debugger;
 	}
 
 	onFocus() {

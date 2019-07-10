@@ -871,6 +871,10 @@ video {
 	width: 72px;
 }
 
+.sidebar-list-item:first-child {
+	margin-top: 5px;
+}
+
 .sidebar-list-item-wrapper {
 	box-sizing: border-box;
 	width: 48px;
@@ -1028,4 +1032,11 @@ video {
 
 .hash-svg {
 	fill: "white";
+}
+
+.sidebar-separator {
+	height: 2px;
+	width: 32px;
+	border-radius: 1px;
+	background: #2f3136;
 }
