@@ -952,6 +952,7 @@ video {
 	position: relative;
 	display: flex;
 	height: 100%;
+	width: 100%;
 	flex: 1 1 auto;
 	min-height: 0;
 	z-index: 1;
@@ -966,20 +967,41 @@ video {
 	overflow: hidden;
 	position: relative;
 	cursor: pointer;
+	width: 100%;
 }
 
-.channel-item-content * {
+.channel-item-content {
 	box-sizing: border-box;
 	height: 32px;
 	padding: 0 8px;
 	margin: 1px 0 1px 8px;
 	border-radius: 4px;
-	display: -webkit-box;
-	display: -ms-flexbox;
 	display: flex;
 	align-items: center;
 	overflow: hidden;
 	color: #8e9297;
+}
+
+.channel-item-content:hover {
+	background-color: #202225;
+	color: white;
+}
+
+.channel-item-content:focus {
+	background-color: #8e9297;
+	color: white;
+}
+
+.channel-item-content * {
+	color: #8e9297;
+}
+
+.channel-item-content:hover * {
+	color: white;
+}
+
+.channel-item-content:focus * {
+	color: white;
 }
 
 .channel-item-hash {
@@ -987,4 +1009,5 @@ video {
 	width: 20px;
 	height: 20px;
 	margin-right: 6px;
+	flex: 0 0 auto;
 }

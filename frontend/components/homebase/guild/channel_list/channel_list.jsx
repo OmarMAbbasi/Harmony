@@ -15,7 +15,7 @@ class ChannelList extends React.Component {
 	render() {
 		return (
 			<div className='channel-list-wrapper'>
-				<ul>
+				<ul style={{width:'100%'}}>
 					{this.props.channels.map(channel => (
 						<ChannelListItem
 							key={channel.id}
