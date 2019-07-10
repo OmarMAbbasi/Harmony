@@ -756,11 +756,12 @@ video {
 	font-family: inherit;
 }
 
-/* TODO: Change color back to transparant */
 .user-anchor-button {
 	color: #fff;
-	background: darkgray;
+	fill: white;
+	background: transparent;
 	line-height: 0;
+	background: 202225;
 	width: 32px;
 	height: 32px;
 	padding: 0;
@@ -772,6 +773,7 @@ video {
 	position: relative;
 	border: 0;
 	outline: 0;
+	cursor: pointer;
 }
 
 .user-anchor-button:focus {
@@ -780,7 +782,8 @@ video {
 
 .user-anchor-button:hover {
 	color: #fff;
-	background: rgba(15, 15, 15, 0.3);
+	background: rgba(15, 15, 15, 0.5);
+	fill: rgba(255, 255, 255, 1);
 	line-height: 0;
 	width: 32px;
 	height: 32px;
@@ -867,8 +870,6 @@ video {
 	justify-content: center;
 	width: 72px;
 }
-
-
 
 .sidebar-list-item-wrapper {
 	box-sizing: border-box;
@@ -1008,8 +1009,23 @@ video {
 
 .channel-item-hash {
 	color: #72767d;
+	fill: #72767d;
 	width: 20px;
 	height: 20px;
 	margin-right: 6px;
 	flex: 0 0 auto;
+}
+
+.channel-item-hash:focus {
+	color: #72767d;
+	fill: black;
+	opacity: 0%;
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
+	flex: 0 0 auto;
+}
+
+.hash-svg {
+	fill: "white";
 }
