@@ -129,7 +129,6 @@ video {
 	font-weight: 400;
 	height: 72px;
 	padding: 8px 0;
-	position: relative;
 	width: 100%;
 	z-index: 56;
 }
@@ -138,7 +137,6 @@ video {
 	display: flex;
 	margin: 0 auto;
 	padding: 0 30px;
-	position: relative;
 	height: 100%;
 	align-items: center;
 	justify-content: center;
@@ -185,7 +183,6 @@ video {
 }
 .nav-list-item {
 	display: inline-block;
-	position: relative;
 	font-size: 14px;
 	margin-right: 8px;
 	padding: 15px 10px;
@@ -206,7 +203,6 @@ video {
 	margin-right: 8px;
 	font-weight: 400;
 	text-decoration: none;
-	position: relative;
 }
 
 .social-media:hover {
@@ -251,7 +247,6 @@ video {
 	box-sizing: border-box;
 	padding: 72px 50px 0;
 	max-width: 1200px;
-	position: relative;
 	z-index: 1;
 }
 
@@ -287,7 +282,6 @@ video {
 	align-items: center;
 	font-weight: 500;
 	padding: 0;
-	position: relative;
 	z-index: 1;
 	width: 250px;
 	height: 45px;
@@ -300,7 +294,6 @@ video {
 	cursor: pointer;
 	height: 100%;
 	outline: none;
-	position: relative;
 	top: -1px;
 	width: 250px;
 }
@@ -311,7 +304,6 @@ video {
 	cursor: pointer;
 	height: 100%;
 	outline: none;
-	position: relative;
 	top: -1px;
 	width: 250px;
 	font-weight: 500;
@@ -328,15 +320,11 @@ video {
 	cursor: pointer;
 	height: 100%;
 	outline: none;
-	position: relative;
 	top: -1px;
 	width: 250px;
 	font-weight: 500;
 	line-height: 1.15;
 	color: #fff;
-	font-size: inherit;
-	font-style: inherit;
-	font-family: inherit;
 }
 
 .splash-background-wrapper {
@@ -348,7 +336,6 @@ video {
 }
 
 .splash-background {
-	position: relative;
 	height: 638px;
 	background-repeat: no-repeat;
 	height: 100%;
@@ -430,7 +417,6 @@ video {
 }
 
 .join-button {
-	position: relative;
 	padding: 16px;
 	height: 15px;
 	border-radius: 3px;
@@ -455,7 +441,6 @@ video {
 
 .footer {
 	background: transparent;
-	position: relative;
 	z-index: 1;
 	padding: 100px;
 }
@@ -488,7 +473,6 @@ video {
 }
 
 .auth-anchor {
-	position: relative;
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100%;
@@ -595,7 +579,6 @@ video {
 }
 
 .auth-button {
-	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -615,7 +598,6 @@ video {
 }
 
 .auth-demo {
-	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -645,7 +627,6 @@ video {
 	color: #fff;
 	font-size: 14px;
 	font-weight: 400;
-	display: flex;
 	align-items: center;
 	padding: 0 10px;
 	margin-bottom: 1px;
@@ -671,7 +652,6 @@ video {
 }
 
 .user-avatar {
-	position: relative;
 	width: 100%;
 	height: 100%;
 	background-clip: padding-box;
@@ -694,7 +674,6 @@ video {
 	float: left;
 	border-radius: 50%;
 	outline: 0;
-	position: relative;
 	overflow: hidden;
 	display: flex;
 	align-items: center;
@@ -770,7 +749,6 @@ video {
 	justify-content: center;
 	opacity: 0.6;
 	border-radius: 3px;
-	position: relative;
 	border: 0;
 	outline: 0;
 	cursor: pointer;
@@ -792,7 +770,6 @@ video {
 	align-items: center;
 	justify-content: center;
 	border-radius: 3px;
-	position: relative;
 	border: 0;
 }
 
@@ -831,7 +808,6 @@ video {
 }
 
 .sidebar-container {
-	position: relative;
 	display: flex;
 	height: 100%;
 	flex: 1 1 auto;
@@ -864,7 +840,6 @@ video {
 }
 
 .sidebar-list-item {
-	position: relative;
 	margin: 0 0 8px;
 	display: flex;
 	justify-content: center;
@@ -879,7 +854,6 @@ video {
 	box-sizing: border-box;
 	width: 48px;
 	height: 48px;
-	position: relative;
 	cursor: pointer;
 	border-radius: 50px;
 	display: flex;
@@ -893,7 +867,6 @@ video {
 	box-sizing: border-box;
 	width: 48px;
 	height: 48px;
-	position: relative;
 	cursor: pointer;
 	border-radius: 15px;
 	display: flex;
@@ -907,7 +880,6 @@ video {
 	box-sizing: border-box;
 	width: 48px;
 	height: 48px;
-	position: relative;
 	cursor: pointer;
 	border-radius: 15px;
 	display: flex;
@@ -927,7 +899,6 @@ video {
 }
 
 .guild-tag-container {
-	position: relative;
 	cursor: pointer;
 	color: #fff;
 	font-weight: 500;
@@ -956,7 +927,6 @@ video {
 }
 
 .channel-list-wrapper {
-	position: relative;
 	display: flex;
 	height: 100%;
 	width: 100%;
@@ -972,7 +942,6 @@ video {
 .channel-item-container {
 	height: 34px;
 	overflow: hidden;
-	position: relative;
 	cursor: pointer;
 	width: 95%;
 }
@@ -1039,4 +1008,122 @@ video {
 	width: 32px;
 	border-radius: 1px;
 	background: #2f3136;
+}
+
+.guild-box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex: 1 1 auto;
+}
+
+.channel-box {
+	display: flex;
+	flex: 1;
+	overflow: hidden;
+	flex-direction: column;
+	min-height: 0;
+}
+
+.channel-header {
+	background: #36393f;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+	color: #b9bbbe;
+	flex: 0 0 auto;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 48px;
+	padding: 0 8px;
+	overflow: hidden;
+	font-size: 16px;
+	line-height: 20px;
+	cursor: default;
+}
+
+.channel-content {
+	background-color: #36393f;
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 auto;
+}
+
+.channel-title {
+	display: flex;
+	flex: 1 1 auto;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.chat-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+
+.message-box {
+	overflow: hidden;
+	overflow-y: scroll;
+	display: flex;
+	flex: 1 1 auto;
+}
+
+.message-form {
+	background-color: #36393f;
+	flex-shrink: 0;
+	margin-left: 20px;
+	margin-right: 20px;
+	display: flex;
+	flex: 0 0 auto;
+}
+
+.message-form-wrapper {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 100%;
+	flex: 1 1 auto;
+}
+
+.message-form-input-area {
+	border-top: 1px solid hsla(0, 0%, 100%, 0.06);
+	padding-top: 20px;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.message-inner-form {
+	background-color: rgba(114, 118, 125, 0.3);
+	display: flex;
+	padding: 0;
+	margin: 0;
+	border-radius: 5px;
+	position: relative;
+	line-height: 1;
+	overflow: hidden;
+	height: 44px;
+}
+
+.message-text-area {
+	font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+	color: hsla(0, 0%, 100%, 0.7);
+	background-color: transparent;
+	border: none;
+	font-weight: 400;
+	line-height: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	resize: none;
+	font: 400 16px Arial;
+	width: 100%;
+	max-height: 144px;
+	min-height: 20px;
+	margin: 2px 2px 2px 0;
+	padding: 10px;
 }
