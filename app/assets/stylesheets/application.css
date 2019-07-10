@@ -639,7 +639,7 @@ video {
 }
 
 .user-anchor-wrapper {
-	background: rgba(32, 34, 37, 0.3);
+	background: #202225;
 	display: flex;
 	height: 52px;
 	color: #fff;
@@ -709,7 +709,7 @@ video {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	margin-right: 4px;
-	margin: 0;
+	margin: 10px;
 	padding: 0;
 	border: 0;
 	font-weight: inherit;
@@ -837,7 +837,6 @@ video {
 	padding: 0;
 	flex-direction: column;
 	overflow: hidden;
-	overflow-y: scroll;
 	flex-shrink: 0;
 	user-select: none;
 	background-color: #202225;
@@ -881,6 +880,7 @@ video {
 	align-items: center;
 	color: #b9bbbe;
 	background-color: #2f3236;
+	padding: 5px;
 }
 .sidebar-list-item-wrapper:hover {
 	box-sizing: border-box;
@@ -908,4 +908,83 @@ video {
 	align-items: center;
 	color: white;
 	background-color: #7188da;
+}
+
+.guild-bar {
+	background-color: #2f3136;
+	width: 240px;
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.guild-tag-container {
+	position: relative;
+	cursor: pointer;
+	color: #fff;
+	font-weight: 500;
+	padding: 0 16px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	z-index: 3;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.guild-tag {
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 500;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	flex: 1;
+}
+
+.guild-tag-dropdown-arrow {
+	margin-left: 4px;
+	width: 18;
+	height: 18;
+}
+
+.channel-list-wrapper {
+	position: relative;
+	display: flex;
+	height: 100%;
+	flex: 1 1 auto;
+	min-height: 0;
+	z-index: 1;
+	overflow: hidden;
+	overflow-y: scroll;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.channel-item-container {
+	height: 34px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+
+.channel-item-content * {
+	box-sizing: border-box;
+	height: 32px;
+	padding: 0 8px;
+	margin: 1px 0 1px 8px;
+	border-radius: 4px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	color: #8e9297;
+}
+
+.channel-item-hash {
+	color: #72767d;
+	width: 20px;
+	height: 20px;
+	margin-right: 6px;
 }

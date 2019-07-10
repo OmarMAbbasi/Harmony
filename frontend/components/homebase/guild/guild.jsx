@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Link, Redirect, withRouter } from "react-router-dom";
 import UserAnchor from "./user_anchor/user_anchor_container";
 import ChannelList from "./channel_list/channel_list_container";
+import GuildTag from "./guild_tag";
 
 class Guild extends Component {
 	constructor(props) {
@@ -23,8 +24,8 @@ class Guild extends Component {
 	render() {
 		return (
 			<div>
-				<div>
-					<div>{this.props.match.params.guildId}</div>
+				<div className="guild-bar">
+					<GuildTag guildId={this.props.match.params.guildId} />
 					<ChannelList guildId={this.props.match.params.guildId} />
 					<UserAnchor />
 				</div>
