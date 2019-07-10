@@ -7,19 +7,18 @@ class ChannelList extends React.Component {
 		this.currentGuild = this.props.currentGuild;
 	}
 
+	componentDidMount() {
+		this.props.fetchGuild(this.props.guildId);
+	}
 
 	render() {
-		if (!this.currentGuild) {
-			this.currentGuild = {};
-			this.currentGuild.channels = [];
-		}
+		debugger;
 		return (
 			<div style={{ width: "72px" }}>
-				<div>{this.currentGuild.name}</div>
 				<ul>
-					{this.currentGuild.channels.map(channel => {
-						<li>{channel.id}</li>;
-					})}
+					{this.props.channels.map(channel => (
+						<li style={{ color: "yellow" }}>{channel.id}</li>	
+					))}
 				</ul>
 			</div>
 		);

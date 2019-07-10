@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
 	return {
 		currentGuildId: ownProps.guildId,
 		guilds: state.entities.guilds,
+		channels: Object.values(state.entities.channels).filter(chan => chan.guildId == ownProps.guildId ),
 		currentGuild: state.entities.guilds[ownProps.guildId]
 	};
 };
