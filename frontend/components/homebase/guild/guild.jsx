@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Link, Redirect, withRouter } from "react-router-dom";
 import UserAnchor from "./user_anchor/user_anchor_container";
+import ChannelList from "./channel_list/channel_list_container";
 
 class Guild extends Component {
 	constructor(props) {
@@ -12,20 +13,20 @@ class Guild extends Component {
 	}
 
 	componentDidMount() {
-		this.props.fetchGuild(this.state.guildId);
+		this.props.fetchGuild(this.props.match.params.guildId);
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		this.state["guildId"] = this.props.match.params.guildId;
-		this.props.fetchGuild(this.state.guildId);
+		this.props.fetchGuild(this.props.match.params.guildId);
 	}
 
 	render() {
+		// debugger;
 		return (
 			<div>
 				<div>
 					<div>{this.props.match.params.guildId}</div>
-					{/* <ChannelList /> */}
+					<ChannelList guildId={this.props.match.params.guildId} />
 					<UserAnchor />
 				</div>
 			</div>

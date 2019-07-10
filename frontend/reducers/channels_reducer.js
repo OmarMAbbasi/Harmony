@@ -1,5 +1,6 @@
 import {
 	GET_CHANNEL,
+	// GET_GUILD
 	DELETE_CHANNEL,
 	RECEIVE_CHANNEL_ERRORS
 } from "../actions/channel_actions";

@@ -11,7 +11,7 @@ const mapStateToProps = (
 ) => {
 	return {
 		errors: errors,
-		currentUser: users[id]
+		currentUser: users[id],
 	};
 };
 

@@ -1,1 +1,1 @@
-json.extract! @channel, :id, :name, :guild_id
+json.partial! 'api/channels/show', channel: @channel

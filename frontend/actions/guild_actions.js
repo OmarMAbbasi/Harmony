@@ -6,9 +6,9 @@ export const GET_GUILD = "GET_GUILD";
 export const DELETE_GUILD = "DELETE_GUILD";
 export const RECEIVE_GUILD_ERRORS = "RECEIVE_GUILD_ERRORS";
 
-const getGuild = guild => ({
+const getGuild = payload => ({
 	type: "GET_GUILD",
-	guild
+	payload
 });
 
 const deleteGuild = () => ({
@@ -24,17 +24,17 @@ const receiveErrors = errors => ({
 
 export const fetchGuild = guildId => dispatch =>
 	GuildAPIUtils.fetchGuild(guildId).then(
-		guild => dispatch(getGuild(guild)),
+		payload => dispatch(getGuild(payload)),
 		err => dispatch(receiveErrors(err.responseJSON))
 	);
 export const createGuild = guild => dispatch =>
 	GuildAPIUtils.createGuild(guild).then(
-		guild => dispatch(getGuild(guild)),
+		payload => dispatch(getGuild(payload)),
 		err => dispatch(receiveErrors(err.responseJSON))
 	);
 export const updateGuild = guild => dispatch =>
 	GuildAPIUtils.updateGuild(guild).then(
-		guild => dispatch(getGuild(guild)),
+		payload => dispatch(getGuild(payload)),
 		err => dispatch(receiveErrors(err.responseJSON))
 	);
 export const destroyGuild = guildId => dispatch =>
