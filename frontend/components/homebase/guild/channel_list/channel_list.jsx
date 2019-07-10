@@ -6,6 +6,7 @@ class ChannelList extends React.Component {
 	constructor(props) {
 		super(props);
 		this.currentGuild = this.props.currentGuild;
+
 	}
 
 	componentDidMount() {
@@ -15,11 +16,10 @@ class ChannelList extends React.Component {
 	render() {
 		return (
 			<div className='channel-list-wrapper'>
-				<ul style={{width:'100%'}}>
+				<ul style={{width:'100%'}}> 
 					{this.props.channels.map(channel => (
 						<ChannelListItem
 							key={channel.id}
-							style={{ color: "yellow" }}
 							guildId={this.props.guildId}
 							channel={channel}
 						/>
