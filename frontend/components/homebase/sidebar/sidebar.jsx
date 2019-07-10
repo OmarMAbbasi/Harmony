@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
 		super(props);
 		this.currentUser = this.props.currentUser;
 	}
-
+//TODO Manage CSS with state from props
 	render() {
 		return (
 			<ul className="sidebar-container">
