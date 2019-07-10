@@ -13,7 +13,6 @@ const guildsReducer = (oldState, action) => {
 	let newState = Object.assign({}, oldState);
 	switch (action.type) {
 		case GET_GUILD:
-			debugger;
 			Object.assign(newState, action.payload.guilds);
 			return newState;
 		case DELETE_GUILD:
