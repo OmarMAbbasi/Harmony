@@ -10,8 +10,16 @@ class Sidebar extends React.Component {
 
 	render() {
 		return (
-			<div style={{ width: '72px'}}>
-				<div>{this.currentUser.home.name}</div>
+			<div className="sidebar-container">
+				<div className="sidebar-list-item">
+					<img
+						className="sidebar-list-item-wrapper"
+						id="transparent"
+						src={window.icons.transparent}
+					/>
+
+					<div></div>
+				</div>
 				<ul>
 					{this.currentUser.guilds.map(guild => (
 						<SidebarGuild key={guild.id} guild={guild} />

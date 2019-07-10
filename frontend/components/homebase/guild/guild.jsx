@@ -21,7 +21,6 @@ class Guild extends Component {
 	}
 
 	render() {
-		// debugger;
 		return (
 			<div>
 				<div>

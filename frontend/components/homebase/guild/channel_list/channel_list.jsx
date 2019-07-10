@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Link, Switch, Redirect, withRouter } from "react-router-dom";
+import ChannelListItem from "./channel_list_item";
 
 class ChannelList extends React.Component {
 	constructor(props) {
@@ -12,12 +13,16 @@ class ChannelList extends React.Component {
 	}
 
 	render() {
-		debugger;
 		return (
-			<div style={{ width: "72px" }}>
+			<div style={{ width: "240px", display: "flex", justifyContent: 'center' }}>
 				<ul>
 					{this.props.channels.map(channel => (
-						<li style={{ color: "yellow" }}>{channel.id}</li>	
+						<ChannelListItem
+							key={channel.id}
+							style={{ color: "yellow" }}
+							guildId={this.props.guildId}
+							channel={channel}
+						/>
 					))}
 				</ul>
 			</div>

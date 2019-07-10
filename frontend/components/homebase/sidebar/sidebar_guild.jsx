@@ -5,9 +5,13 @@ import HomeContainer from "../home_container";
 
 const SidebarGuild = ({ guild }) => {
 	return (
-		<li style={{ color: "white", background: "pink" }}>
-			<NavLink to={`/home/guilds/${guild.id}`} id={guild.id}>
-				{guild.name}
+		<li className="sidebar-list-item">
+			<NavLink
+				className="sidebar-list-item-wrapper"
+				to={`/home/guilds/${guild.id}`}
+				id={guild.id}
+			>
+				{guild.name[0]}
 			</NavLink>
 		</li>
 	);

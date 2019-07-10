@@ -9,7 +9,7 @@ class Home extends React.Component {
 
 	render() {
 		return (
-			<div style={{ backgroundColor: "#202225", display: "flex" }}>
+			<div className='home-view'>
 				<Sidebar />
 				<Route path="/home/guilds/:guildId" component={GuildContainer} />
 			</div>
