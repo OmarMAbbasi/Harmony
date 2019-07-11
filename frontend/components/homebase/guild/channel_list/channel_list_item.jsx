@@ -18,6 +18,26 @@ class ChannelIndexItem extends React.Component {
 	onBlur() {
 		this.setState({ color: "#72767d" });
 	}
+
+	componentDidMount() {
+		let id = this.props.channel.id;
+		this.props.fetchChannel(id);
+		this.chat = App.cable.subscriptions.create(
+			{ channel: "ChannelChannel", id: id },
+			{
+				received: data => {
+					this.updateLog(data);
+				},
+				load: function() {
+					return this.perform("load");
+				},
+				speak: function(data) {
+					return this.perform("speak", data);
+				}
+			}
+		);
+	}
+
 	render() {
 		return (
 			<li

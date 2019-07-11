@@ -11,7 +11,7 @@ const mapStateToProps = (
 ) => {
 	return {
 		errors: errors,
-		currentUser: users[id],
+		currentUser: users[id]
 	};
 };
 
@@ -22,7 +22,9 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Guild);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(Guild)
+);

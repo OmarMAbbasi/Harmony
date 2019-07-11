@@ -5,13 +5,17 @@ import {
 } from "../actions/channel_actions";
 
 import { GET_GUILD } from "../actions/guild_actions";
+import { CABLE_MESSAGE, CABLE_MESSAGES } from "../actions/message_actions";
 
 const channelsReducer = (oldState = {}, action) => {
 	Object.freeze(oldState);
 	let newState = Object.assign({}, oldState);
 	switch (action.type) {
+		case CABLE_MESSAGE:
+			newState = Object.assign({}, oldState, action.payload.messages);
+			return newState;
 		case GET_CHANNEL:
-			newState[action.channel.id] = action.channels;
+			Object.assign(newState, action.payload.channels);
 			return newState;
 		case DELETE_CHANNEL:
 			newState = {};

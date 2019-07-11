@@ -3,7 +3,7 @@ import { Route, Link, Redirect, withRouter } from "react-router-dom";
 import UserAnchor from "./user_anchor/user_anchor_container";
 import ChannelList from "./channel_list/channel_list_container";
 import GuildTag from "./guild_tag";
-import Chatbox from './chatbox/chatbox';
+import ChatboxContainer from "./chatbox/chatbox_container";
 
 class Guild extends Component {
 	constructor(props) {
@@ -31,8 +31,7 @@ class Guild extends Component {
 
 					<UserAnchor />
 				</div>
-				<Chatbox />
-
+				<Route path="/home/guilds/:guildId/:channelId" component={ChatboxContainer} />
 			</div>
 		);
 	}

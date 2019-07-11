@@ -12,6 +12,9 @@ class ChannelList extends React.Component {
 		this.props.fetchGuild(this.props.guildId);
 	}
 
+	onClick() {
+	}
+
 	//TODO Manage CSS with state from props
 
 	render() {
@@ -23,6 +26,7 @@ class ChannelList extends React.Component {
 							key={channel.id}
 							guildId={this.props.guildId}
 							channel={channel}
+							fetchChannel={this.props.fetchChannel}
 						/>
 					))}
 				</ul>

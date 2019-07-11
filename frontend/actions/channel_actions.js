@@ -1,4 +1,4 @@
-import * as ChannelAPIUtil from "../util/channel_api_util";
+import * as ChannelAPIUtils from "../util/channel_api_util";
 
 //Actions
 
@@ -6,9 +6,9 @@ export const GET_CHANNEL = "GET_CHANNEL";
 export const DELETE_CHANNEL = "DELETE_CHANNEL";
 export const RECEIVE_CHANNEL_ERRORS = "RECEIVE_CHANNEL_ERRORS";
 
-const getChannel = channel => ({
+const getChannel = payload => ({
 	type: "GET_CHANNEL",
-	channel
+	payload
 });
 
 const deleteChannel = () => ({

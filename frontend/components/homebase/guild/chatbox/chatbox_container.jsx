@@ -1,16 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link, NavLink, withRouter } from "react-router-dom";
-import ChannelList from "./channel_list";
 import { fetchGuild } from "../../../../actions/guild_actions";
 import { fetchChannel } from "../../../../actions/channel_actions";
+import Chatbox from './chatbox';
+import { cableMessage, cableMessages } from '../../../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => {
 	return {
 		currentGuildId: ownProps.guildId,
 		guilds: state.entities.guilds,
 		channels: Object.values(state.entities.channels).filter(
-			chan => chan.guildId == ownProps.guildId
+			chan => chan.guildId == ownProps.channelId
 		),
 		currentGuild: state.entities.channels[ownProps.guildId]
 	};
@@ -18,12 +19,14 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
 	return {
+		cableMessage: payload => dispatch(cableMessage(payload)),
+		cableMessages: payload => dispatch(cableMessages(payload)),
         fetchChannel: channelId => dispatch(fetchChannel(channelId)),
 		fetchGuild: guildId => dispatch(fetchGuild(guildId))
 	};
 };
 
-export default connect(
+export default withRouter(connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ChannelList);
+)(Chatbox));

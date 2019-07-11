@@ -7,17 +7,13 @@ class ChannelChannel < ApplicationCable::Channel
   def speak(data)
     message = @channel.messages.new(body: data['message'], author_id: data['authorId'] )
     if message.save
-      socket = { message: message.body, type: 'message' }
+      socket = { messages: message, users: message.author, channels: message.channel, type: 'message' }
       ChannelChannel.broadcast_to(@channel, socket)
     end
   end
 
   def load
-    messages = @channel.messages.collect(&:body)
-    messages = Message.all
-    messages = Message.all.collect(&:body)
-    messages = Message.all.collect(&:body)
-
+    messages = @channel.messages
     socket = { messages: messages, type: 'messages' }
     ChannelChannel.broadcast_to(@channel, socket)
   end
