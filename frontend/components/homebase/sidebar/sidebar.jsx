@@ -6,15 +6,29 @@ class Sidebar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.currentUser = this.props.currentUser;
+		this.state = {
+			activeGuildId: this.currentUser.home.id
+		};
+		this.onClick = this.onClick.bind(this);
 	}
-//TODO Manage CSS with state from props
+
+	onClick(e) {
+		e.preventDefault();
+		this.setState({ activeGuildId: e.target.id });
+	}
+	//TODO Manage CSS with state from props
 	render() {
+		let css = "sidebar-list-item-wrapper";
+		if (this.state.activeGuildId == this.currentUser.home.id) {
+			css = "sidebar-list-item-wrapper-focus";
+		}
 		return (
 			<ul className="sidebar-container">
-				<li className="sidebar-list-item">
-					<img 
-						className="sidebar-list-item-wrapper"
-						id="transparent"
+				<li key="home" className="sidebar-list-item">
+					<img
+						onClick={this.onClick}
+						className={css}
+						id={this.currentUser.home.id}
 						src={window.icons.transparent}
 					/>
 				</li>
@@ -23,10 +37,18 @@ class Sidebar extends React.Component {
 				</li>
 				<div style={{ overflowY: "scroll" }}>
 					{this.currentUser.guilds.map(guild => (
-						<SidebarGuild key={guild.id} guild={guild} />
+						<div>
+							<li onClick={this.onClick}  className="sidebar-list-item">
+								<SidebarGuild
+									key={guild.id}
+									guild={guild}
+									activeGuildId={this.state.activeGuildId}
+								/>
+							</li>
+						</div>
 					))}
 				</div>
-				<li className='className="sidebar-list-item"'></li>
+				<li key="add-guild" className='className="sidebar-list-item"'></li>
 			</ul>
 		);
 	}
