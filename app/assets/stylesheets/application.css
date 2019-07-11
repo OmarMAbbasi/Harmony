@@ -977,7 +977,7 @@ video {
 	color: white;
 }
 
-.channel-item-content:focus * {
+.channel-item-content-focus * {
 	color: white;
 }
 
@@ -992,12 +992,7 @@ video {
 
 .channel-item-hash:focus {
 	color: #72767d;
-	fill: black;
-	opacity: 0%;
-	width: 20px;
-	height: 20px;
-	margin-right: 6px;
-	flex: 0 0 auto;
+	fill: white;
 }
 
 .hash-svg {

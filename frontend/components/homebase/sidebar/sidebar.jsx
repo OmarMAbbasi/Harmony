@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
 		super(props);
 		this.currentUser = this.props.currentUser;
 		this.state = {
-			activeGuildId: this.currentUser.home.id
+			activeGuildId: props.match.params.guildId || this.currentUser.home.id
 		};
 		this.onClick = this.onClick.bind(this);
 	}
@@ -16,7 +16,6 @@ class Sidebar extends React.Component {
 		e.preventDefault();
 		this.setState({ activeGuildId: e.target.id });
 	}
-	//TODO Manage CSS with state from props
 	render() {
 		let css = "sidebar-list-item-wrapper";
 		if (this.state.activeGuildId == this.currentUser.home.id) {
@@ -38,7 +37,7 @@ class Sidebar extends React.Component {
 				<div style={{ overflowY: "scroll" }}>
 					{this.currentUser.guilds.map(guild => (
 						<div>
-							<li onClick={this.onClick}  className="sidebar-list-item">
+							<li onClick={this.onClick} className="sidebar-list-item">
 								<SidebarGuild
 									key={guild.id}
 									guild={guild}

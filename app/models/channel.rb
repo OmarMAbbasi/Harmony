@@ -20,7 +20,7 @@ class Channel < ApplicationRecord
 
     has_many :channel_subscriptions
 
-    belongs_to :guild
+    has_many :guild
 
     has_many :messages,
         class_name: :Message,

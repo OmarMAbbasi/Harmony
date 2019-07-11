@@ -14,13 +14,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-        fetchGuild: guildId => dispatch(fetchGuild(guildId))
+		fetchGuild: guildId => dispatch(fetchGuild(guildId))
 	};
 };
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		mapDispatchToProps
-	)(Sidebar)
-);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Sidebar);

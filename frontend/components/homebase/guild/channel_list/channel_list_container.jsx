@@ -23,7 +23,9 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(ChannelList);
+export default withRouter(
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)(ChannelList)
+);
