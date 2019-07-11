@@ -3,7 +3,7 @@
 # Table name: channels
 #
 #  id         :bigint           not null, primary key
-#  name       :string
+#  name       :string           not null
 #  guild_id   :integer
 #  position   :integer
 #  created_at :datetime         not null

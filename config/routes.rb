@@ -8,9 +8,11 @@ Rails.application.routes.draw do
     resources :guilds, only: [:show, :create, :update, :destroy] do
       resources :channels, only: [:show]
     end
+    resources :messages, only: [:create, :update, :destroy]
     resources :channels, only: [:show, :create, :update, :destroy]
     resource :session, only: [:create, :destroy]
   end
 
+  mount ActionCable.server => '/cable'
   root 'static_pages#root'
 end

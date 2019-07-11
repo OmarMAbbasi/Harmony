@@ -6,7 +6,6 @@ import { fetchGuild } from "../../../../actions/guild_actions";
 import { fetchChannel } from "../../../../actions/channel_actions";
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
 	return {
 		currentGuildId: ownProps.guildId,
 		guilds: state.entities.guilds,

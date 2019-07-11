@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 2019_07_10_183121) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "channel_id"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

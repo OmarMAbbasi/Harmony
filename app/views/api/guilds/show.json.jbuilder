@@ -1,11 +1,5 @@
-
-json.guilds do
-    json.set! @guild.id do 
-        json.extract! @guild, :id, :name, :owner_id
-    end
-end
-
+json.partial! 'api/guilds/guild', guild: @guild
 
 @guild.channels.each do |channel|
-    json.partial! 'api/channels/show', channel: channel
+    json.partial! 'api/channels/channel', channel: channel
 end

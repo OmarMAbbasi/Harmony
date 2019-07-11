@@ -48,6 +48,10 @@ class User < ApplicationRecord
     class_name: :Guild,
     foreign_key: :owner_id
 
+    has_many :messages,
+      class_name: :Message,
+      foreign_key: :author_id
+
   ##Methods
   def username_constraints
     if username =~ /[@#:`"']/
