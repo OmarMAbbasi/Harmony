@@ -12,7 +12,9 @@ const messageReducer = (oldState = [], action) => {
 			newState = Object.assign({}, oldState, action.payload.messages);
 			return newState;
 		case CABLE_MESSAGES:
-			newState = Object.assign({}, oldState, action.payload.messages);
+			if (action.payload) {
+				newState = Object.assign({}, oldState, action.payload.messages);
+			}
 			return newState;
 		default:
 			return oldState;

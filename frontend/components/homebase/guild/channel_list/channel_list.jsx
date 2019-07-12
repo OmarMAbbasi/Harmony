@@ -28,6 +28,9 @@ class ChannelList extends React.Component {
 		) {
 			this.props.fetchChannel(this.props.channels[0].id);
 			this.setState({ currentChannel: this.props.channels[0].id });
+			this.props.history.push(
+				`/home/guilds/${this.props.guildId}/${this.props.channels[0].id}`
+			);
 		} else if (this.props.guildId !== prevProps.guildId) {
 			this.props.fetchGuild(this.props.guildId);
 			this.setState({ currentChannel: undefined });
@@ -44,32 +47,6 @@ class ChannelList extends React.Component {
 		this.props.fetchChannel(id);
 		this.setState({ currentChannel: id });
 	}
-
-	// openChannel(id) {
-	// 	this.chat = App.cable.subscriptions.create(
-	// 		{ channel: "ChannelChannel", id: id },
-	// 		{
-	// 			received: data => {
-	// 				switch (data.type) {
-	// 					case "message":
-	// 						this.setState({
-	// 							messages: this.state.messages.concat(data.message)
-	// 						});
-	// 						break;
-	// 					case "messages":
-	// 						this.setState({ messages: data.messages });
-	// 						break;
-	// 				}
-	// 			},
-	// 			load: function() {
-	// 				return this.perform("load");
-	// 			},
-	// 			speak: function(data) {
-	// 				return this.perform("speak", data);
-	// 			}
-	// 		}
-	// 	);
-	// }
 
 	render() {
 		if (!this.props.guilds[this.props.guildId]) {

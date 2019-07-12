@@ -19,7 +19,5 @@
 (function() {
 	this.App || (this.App = {});
 
-	App.cable = ActionCable.createConsumer(
-		"wss://cluck-cluck.herokuapp.com/cable"
-	);
+	App.cable = ActionCable.createConsumer("ws://localhost:3000/cable");
 }.call(this));

@@ -14,7 +14,11 @@ class ChannelChannel < ApplicationCable::Channel
 
   def load
     messages = @channel.messages
-    socket = { messages: messages, type: 'messages' }
+    if messages
+      socket = { messages: messages, type: 'messages' }
+    else
+      socket = { messages: null, type: 'nomessages'}
+    end
     ChannelChannel.broadcast_to(@channel, socket)
   end
 
