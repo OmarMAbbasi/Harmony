@@ -154,7 +154,7 @@ class Chatbox extends Component {
 								</div>
 							</div>
 						</form>
-						<input type="submit" value="Submit" />
+						<button className="hidden" type="submit" value="Submit" />
 					</div>
 					<div style={{ display: "none" }}>FriendList</div>
 				</div>

@@ -5,14 +5,14 @@ function OpenButton({ openUsernameField, currentUser }) {
 	if (!currentUser) {
 		return (
 			<button className="open-button" onClick={openUsernameField}>
-				Open Discord
+				Open Harmony
 			</button>
 		);
 	} else {
 		return (
 			<button className="open-button">
 				<Link style={{ color: "white" }} to={`/home/`}>
-					Open Discord
+					Open Harmony
 				</Link>
 			</button>
 		);
