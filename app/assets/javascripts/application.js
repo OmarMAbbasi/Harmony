@@ -17,7 +17,9 @@
 //= require jquery_ujs
 
 (function() {
-    this.App || (this.App = {});
- 
-	App.cable = ActionCable.createConsumer("ws://localhost:3000/cable");
+	this.App || (this.App = {});
+
+	App.cable = ActionCable.createConsumer(
+		"wss://cluck-cluck.herokuapp.com/cable"
+	);
 }.call(this));
