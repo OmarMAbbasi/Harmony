@@ -17,7 +17,8 @@ class ChannelChannel < ApplicationCable::Channel
     if messages
       socket = { messages: messages, type: 'messages' }
     else
-      socket = { messages: null, type: 'nomessages'}
+      socket = { messages: null, type: 'no
+        messages'}
     end
     ChannelChannel.broadcast_to(@channel, socket)
   end

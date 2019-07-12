@@ -73,14 +73,16 @@ class Chatbox extends Component {
 		);
 	}
 
-	handleSubmit() {
+	handleSubmit(e) {
+		e.preventDefault();
+
 		this.chat.speak({ message: "somemessage", authorId: 1 });
 		this.setState({ body: "" });
 	}
 
 	addMessage(e) {
 		if (e.keyCode == 13 && e.shiftKey == false) {
-			this.handleSubmit();
+			this.handleSubmit(e);
 		}
 	}
 
