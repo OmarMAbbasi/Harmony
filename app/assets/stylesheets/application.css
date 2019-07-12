@@ -170,6 +170,7 @@ video {
 	flex-shrink: 0;
 	width: 98px;
 	height: 36px;
+	object-fit: contain;
 }
 
 .nav-dropdowns {
@@ -518,7 +519,10 @@ video {
 }
 
 .auth-logo {
-	position: relative;
+	flex-grow: 0;
+	flex-shrink: 0;
+	height: 36px;
+	object-fit: contain;
 }
 
 .login-title {

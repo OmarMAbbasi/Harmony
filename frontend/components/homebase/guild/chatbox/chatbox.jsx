@@ -56,7 +56,6 @@ class Chatbox extends Component {
 			id = this.props.channels[0].id;
 		}
 
-		debugger;
 		this.chat = App.cable.subscriptions.create(
 			{ channel: "ChannelChannel", id: id },
 			{
@@ -84,7 +83,6 @@ class Chatbox extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		debugger;
 		this.chat.speak({ message: "somemessage", authorId: 1 });
 		this.setState({ body: "" });
 	}

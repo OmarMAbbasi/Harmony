@@ -28,7 +28,7 @@ class Navbar extends React.Component {
 									<img
 										id="nav-discord"
 										className="nav-discord"
-										src={window.images.longLogo}
+										src={window.images.harmonyLogo}
 									/>
 								</div>
 							</Link>

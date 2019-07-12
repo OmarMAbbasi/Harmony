@@ -123,7 +123,7 @@ class AuthBox extends React.Component {
 					<Link className="auth-logo-link" to="/">
 						<img
 							id="longLogo"
-							src={window.images.longLogo}
+							src={window.images.harmonyLogo}
 							className="auth-logo"
 						/>
 					</Link>
