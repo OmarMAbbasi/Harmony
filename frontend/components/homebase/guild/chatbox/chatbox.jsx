@@ -76,8 +76,12 @@ class Chatbox extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 
-		this.chat.speak({ message: "somemessage", authorId: 1 });
+		this.chat.speak({
+			message: this.state.body,
+			authorId: this.props.currentUser.id
+		});
 		this.setState({ body: "" });
+		this.loadChat;
 	}
 
 	addMessage(e) {
