@@ -4,8 +4,6 @@ import { cableMessage } from "../../../../actions/message_actions";
 class Chatbox extends Component {
 	constructor(props) {
 		super(props);
-		debugger;
-
 		this.state = { messages: [] };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
@@ -109,9 +107,6 @@ class Chatbox extends Component {
 	}
 
 	render() {
-		if (!this.props.match.params.channelId) {
-			return null;
-		}
 		let messages = this.props.messages || [];
 		return (
 			<div className="channel-box">

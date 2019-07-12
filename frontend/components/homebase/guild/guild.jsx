@@ -45,7 +45,7 @@ class Guild extends Component {
 					<UserAnchor />
 				</div>
 				<ChatboxContainer
-					channelId={this.state.channelId}
+					channelId={this.props.match.params.channelId}
 					guildId={this.props.match.params.guildId}
 					currentUser={this.currentUser}
 				/>
