@@ -49,10 +49,9 @@ class Sidebar extends React.Component {
 				</li>
 				<div style={{ overflowY: "scroll" }}>
 					{this.currentUser.guilds.map(guild => (
-						<div>
+						<div key={guild.id}>
 							<li onClick={this.onClick} className="sidebar-list-item">
 								<SidebarGuild
-									key={guild.id}
 									guild={guild}
 									activeGuildId={this.state.activeGuildId}
 								/>
