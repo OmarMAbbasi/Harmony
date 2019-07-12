@@ -7,7 +7,8 @@ EasyTrade, a Robinhood clone, is an investing application that allows users to p
 ## Technologies
 
 - Backend: Rails/ActiveRecord/PostgreSQL/ActionCable
-- Frontend: React/Redux
+- Frontend: React/Redux/Javascript
+- Styling: CSS/HTML/SCSS
 
 ## Features
 
@@ -191,3 +192,11 @@ addMessage(e) {
 }
 
 ```
+
+### Acknowledgments
+
+Thanks to all the TAs at App Academy that helped me through the experience and taught me so much. 
+
+A special thank you to Ryan Mapa, my advisor on this project and my circle leader. His guidence got me through the program. 
+
+My parents for all their love and support they gave during this program. I couldn't have done it without them. 
