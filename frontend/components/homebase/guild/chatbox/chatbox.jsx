@@ -4,6 +4,8 @@ import { cableMessage } from "../../../../actions/message_actions";
 class Chatbox extends Component {
 	constructor(props) {
 		super(props);
+		debugger;
+
 		this.state = { messages: [] };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
@@ -111,7 +113,6 @@ class Chatbox extends Component {
 			return null;
 		}
 		let messages = this.props.messages || [];
-		this.props.messages.map(message => console.log(message));
 		return (
 			<div className="channel-box">
 				<div className="channel-header">
@@ -120,7 +121,12 @@ class Chatbox extends Component {
 				<div className="channel-content">
 					<div className="chat-content">
 						<div className="message-box">
-							{this.props.messages.map(message => console.log(message))}
+							{this.props.messages.map(message => (
+								<li>
+									{message.body}
+									<br></br>
+								</li>
+							))}
 						</div>
 						<form onSubmit={this.handleSubmit} className="message-form">
 							<div className="message-form-wrapper">
