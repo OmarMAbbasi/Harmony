@@ -8,7 +8,28 @@ class Chatbox extends Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
 		this.updateLog = this.updateLog.bind(this);
-		// this.chat.load;
+		this.state = {
+			channelId: props.match.params.channelId,
+			body: ""
+		};
+	}
+
+	componentDidMount() {
+		let id = this.state.channelId
+		this.chat = App.cable.subscriptions.create(
+			{ channel: "ChannelChannel", id: id },
+			{
+				received: data => {
+					this.updateLog(data);
+				},
+				load: function() {
+					return this.perform("load");
+				},
+				speak: function(data) {
+					return this.perform("speak", data);
+				}
+			}
+		);
 	}
 
 	update(e) {
@@ -22,21 +43,21 @@ class Chatbox extends Component {
 			this.props.cableMessages();
 		}
 	}
-
-	handleSubmit(e) {
-		e.preventDefault();
-		this.chat.speak({ message: "somemessage", authorId: 1 });
-		this.setState({ body: "" });
-	}
-
-	// componentDidMount() {
-	// 	let id = 12
-	// 	debugger;
+	// openChannel(id) {
 	// 	this.chat = App.cable.subscriptions.create(
 	// 		{ channel: "ChannelChannel", id: id },
 	// 		{
 	// 			received: data => {
-	// 				this.updateLog(data);
+	// 				switch (data.type) {
+	// 					case "message":
+	// 						this.setState({
+	// 							messages: this.state.messages.concat(data.message)
+	// 						});
+	// 						break;
+	// 					case "messages":
+	// 						this.setState({ messages: data.messages });
+	// 						break;
+	// 				}
 	// 			},
 	// 			load: function() {
 	// 				return this.perform("load");
@@ -47,6 +68,39 @@ class Chatbox extends Component {
 	// 		}
 	// 	);
 	// }
+
+	handleSubmit(e) {
+		e.preventDefault();
+		this.chat.speak({ message: "somemessage", authorId: 1 });
+		this.setState({ body: "" });
+	}
+
+	componentDidMount() {
+		let id = this.state.channelId;
+		this.chat = App.cable.subscriptions.create(
+			{ channel: "ChannelChannel", id: id },
+			{
+				received: data => {
+					switch (data.type) {
+						case "message":
+							this.setState({
+								messages: this.state.messages.concat(data.message)
+							});
+							break;
+						case "messages":
+							this.setState({ messages: data.messages });
+							break;
+					}
+				},
+				load: function() {
+					return this.perform("load");
+				},
+				speak: function(data) {
+					return this.perform("speak", data);
+				}
+			}
+		);
+	}
 
 	render() {
 		return (
@@ -69,8 +123,8 @@ class Chatbox extends Component {
 									</div>
 								</div>
 							</div>
-							<input type="submit" value="Submit" />
 						</form>
+						<input type="submit" value="Submit" />
 					</div>
 					<div style={{ display: "none" }}>FriendList</div>
 				</div>

@@ -7,6 +7,7 @@ import { fetchChannel } from "../../../../actions/channel_actions";
 
 const mapStateToProps = (state, ownProps) => {
 	return {
+		currentChannelId: ownProps.channelId,
 		currentGuildId: ownProps.guildId,
 		guilds: state.entities.guilds,
 		channels: Object.values(state.entities.channels).filter(

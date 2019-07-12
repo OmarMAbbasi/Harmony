@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, NavLink, withRouter } from "react-router-dom";
 import Sidebar from "./sidebar";
+import { fetchGuild } from '../../../actions/guild_actions';
 
 const mapStateToProps = (state, ownProps) => {
 	let currentUser = state.entities.users[state.session.id];

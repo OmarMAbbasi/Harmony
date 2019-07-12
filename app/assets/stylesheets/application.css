@@ -958,7 +958,7 @@ video {
 	color: #8e9297;
 }
 
-.channel-item-content:hover {
+/* .channel-item-content:hover {
 	background-color: #202225;
 	color: white;
 }
@@ -967,20 +967,9 @@ video {
 	background-color: #8e929770;
 	color: white;
 }
+ */
 
-.channel-item-content * {
-	color: #8e9297;
-	
-}
-
-.channel-item-content:hover * {
-	color: white;
-}
-
-.channel-item-content-focus * {
-	color: white;
-}
-
+/* 
 .channel-item-hash {
 	color: #72767d;
 	fill: #72767d;
@@ -988,12 +977,12 @@ video {
 	height: 20px;
 	margin-right: 6px;
 	flex: 0 0 auto;
-}
+} */
 
-.channel-item-hash:focus {
+/* .channel-item-hash:focus {
 	color: #72767d;
 	fill: white;
-}
+} */
 
 .hash-svg {
 	fill: "white";

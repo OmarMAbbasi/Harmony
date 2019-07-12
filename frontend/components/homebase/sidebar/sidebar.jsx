@@ -13,8 +13,9 @@ class Sidebar extends React.Component {
 	}
 
 	onClick(e) {
-		e.preventDefault();
 		this.setState({ activeGuildId: e.target.id });
+		let id = this.state.activeGuildId;
+		this.props.fetchGuild(id);
 	}
 	render() {
 		let css = "sidebar-list-item-wrapper";
@@ -24,12 +25,12 @@ class Sidebar extends React.Component {
 		return (
 			<ul className="sidebar-container">
 				<li key="home" className="sidebar-list-item">
-					<img
-						onClick={this.onClick}
-						className={css}
-						id={this.currentUser.home.id}
-						src={window.icons.transparent}
-					/>
+						<img
+							onClick={this.onClick}
+							className={css}
+							id={this.currentUser.home.id}
+							src={window.icons.transparent}
+						/>
 				</li>
 				<li className="sidebar-list-item">
 					<div className="sidebar-separator"></div>

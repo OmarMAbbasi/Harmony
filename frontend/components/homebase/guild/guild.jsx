@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link, Redirect, withRouter, Switch } from "react-router-dom";
+import { Switch, Route, Link, Redirect, withRouter } from "react-router-dom";
 import UserAnchor from "./user_anchor/user_anchor_container";
 import ChannelList from "./channel_list/channel_list_container";
 import GuildTag from "./guild_tag";
@@ -35,10 +35,14 @@ class Guild extends Component {
 
 					<UserAnchor />
 				</div>
-				<Route
-					path="/home/guilds/:guildId/:channelId"
-					component={ChatboxContainer}
-				/>
+				<Switch>
+					<Route
+						path="/home/guilds/:guildId/:channelId"
+						component={ChatboxContainer}
+					/>
+					<Route path="/home/guilds/:guildId/" component={ChatboxContainer} />
+					<Route path="/home/" currentUser="currentUser" />
+				</Switch>
 			</div>
 		);
 	}

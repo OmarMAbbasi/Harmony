@@ -1,3 +1,71 @@
 // Place all the styles related to the api/channels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.channel-list-item {
+	height: 32px;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+	padding: 0 8px;
+	margin: 1px 8px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	span {
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 550;
+		text-overflow: ellipsis;
+		flex: 1 1 auto;
+		color: #72767d;
+	}
+}
+
+.channel-list-item:hover {
+	background-color: #292b30;
+
+	span {
+		color: white;
+	}
+}
+
+.channel-list-item-clicked {
+	background-color: #40444b;
+	height: 32px;
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+	padding: 0 8px;
+	margin: 1px 8px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	span {
+		font-size: 15px;
+		line-height: 20px;
+		font-weight: 550;
+		text-overflow: ellipsis;
+		flex: 1 1 auto;
+		color: white;
+	}
+}
+
+.channel-hash-clicked {
+	width: 20px;
+	height: 20px;
+	color: #72767d;
+	margin-right: 6px;
+	flex: 0 0 auto;
+}
+
+.channel-hash {
+	width: 20px;
+	height: 20px;
+	color: #72767d;
+	margin-right: 6px;
+	flex: 0 0 auto;
+}
