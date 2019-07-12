@@ -22,13 +22,9 @@ EasyTrade, a Robinhood clone, is an investing application that allows users to p
 When a username logs in they are taken to a personal Home guild. Joining has a low barrier of entry.
 <br />
 <br />
-<img src=".app/assets/readme/UsernameCreation2.gif" align="center" />
+<img src="./app/assets/readme/UsernameCreation2.gif" align="center" />
 <br />
 <br />
-
-".app/assets/readme/Submit message.gif"
-
-".app/assets/readme/Server and Guild navigation.gif"
 
 #### Modular and Persistent Fields
 
@@ -112,11 +108,9 @@ function OpenButton({ openUsernameField, currentUser }) {
 
 <br />
 <br />
-<img src=".app/assets/readme/Server and Guild navigation.gif" align="center" />
+<img src="./app/assets/readme/Server and Guild navigation.gif" align="center" />
 <br />
 <br />
-
-".app/assets/readme/Submit message.gif"
 
 As users navigate through thier guilds and channels, the view updates dynamically with visual feedback. As they navigate through, there is visual feedback as to which Guild or Channel they are hovering over or currently in.
 
@@ -180,7 +174,7 @@ The field at the bottom of the chatbox is connected to the channel's websocket d
 
 <br />
 <br />
-<img src=".app/assets/readme/Submit message.gif" align="center" />
+<img src="./app/assets/readme/Submit message.gif" align="center" />
 <br />
 <br />
 
