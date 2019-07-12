@@ -12,7 +12,7 @@ class Guild extends Component {
 		this.state = {
 			guildId:
 				this.props.match.params.guildId || this.props.currentUser.home.id,
-			currentChannel: -1
+			currentChannel: this.props.match.params.channelId || -1
 		};
 	}
 
@@ -21,7 +21,12 @@ class Guild extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-	
+		if (prevState.guildId !== this.props.match.params.guildId) {
+			this.setState({ guildId: this.props.match.params.guildId });
+		} else if (prevState.currentChannel !== this.props.match.params.channelId) {
+			this.setState({ currentChannel: this.props.match.params.channelId });
+		}
+		this.forceUpdate;
 	}
 
 	render() {
@@ -39,14 +44,19 @@ class Guild extends Component {
 
 					<UserAnchor />
 				</div>
-				<Switch>
-					<Route
-						path="/home/guilds/:guildId/:channelId"
-						component={ChatboxContainer}
-					/>
-					<Route path="/home/guilds/:guildId/" component={ChatboxContainer} />
-					<Route path="/home/" currentUser="currentUser" />
-				</Switch>
+				<ChatboxContainer
+					channelId={this.state.channelId}
+					guildId={this.props.match.params.guildId}
+					currentUser={this.currentUser}
+				/>
+				{/* <Switch> */}
+				{/* <Route */}
+				{/* // path="/home/guilds/:guildId/:channelId"
+						// component={ChatboxContainer}
+					// /> */}
+				{/* <Route path="/home/guilds/:guildId/" component={ChatboxContainer} /> */}
+				{/* <Route path="/home/" currentUser="currentUser" /> */}
+				{/* </Switch> */}
 			</div>
 		);
 	}
