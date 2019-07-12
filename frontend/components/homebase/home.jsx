@@ -5,6 +5,14 @@ import GuildContainer from "./guild/guild_container";
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			opened: false
+		};
+	}
+
+	componentDidMount() {
+		let guild = this.props.currentUser.home.id;
+		this.props.fetchGuild(guild);
 	}
 
 	render() {
@@ -25,7 +33,10 @@ class Home extends React.Component {
 						currentUser={this.props.currentUser}
 						component={GuildContainer}
 					/>
-					<Route path="/home/guilds/:guildId/:channelId" component={GuildContainer} />
+					<Route
+						path="/home/guilds/:guildId/:channelId"
+						component={GuildContainer}
+					/>
 					<Route path="/home/guilds/:guildId" component={GuildContainer} />
 				</Switch>
 			</div>

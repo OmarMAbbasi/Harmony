@@ -42,6 +42,7 @@ class AuthBox extends React.Component {
 			this.props
 				.processForm(user)
 				.then(() => this.props.history.push("/home/"));
+			
 			return <Route to="/home/" />;
 		} else {
 			this.setState({ errors: "Not Logged In" });
@@ -120,7 +121,11 @@ class AuthBox extends React.Component {
 				></img>
 				<div className="auth-anchor">
 					<Link className="auth-logo-link" to="/">
-						<img id="longLogo" src={window.images.longLogo} className="auth-logo"/>
+						<img
+							id="longLogo"
+							src={window.images.longLogo}
+							className="auth-logo"
+						/>
 					</Link>
 					<form className="auth-box" onSubmit={this.handleSubmit}>
 						<div className="form-wrapper">

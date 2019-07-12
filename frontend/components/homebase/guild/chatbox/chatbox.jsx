@@ -7,42 +7,47 @@ class Chatbox extends Component {
 		this.state = { messages: [] };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
-		this.updateLog = this.updateLog.bind(this);
+		// this.updateLog = this.updateLog.bind(this);
 		this.state = {
 			channelId: props.match.params.channelId,
 			body: ""
 		};
 	}
 
-	componentDidMount() {
-		let id = this.state.channelId
-		this.chat = App.cable.subscriptions.create(
-			{ channel: "ChannelChannel", id: id },
-			{
-				received: data => {
-					this.updateLog(data);
-				},
-				load: function() {
-					return this.perform("load");
-				},
-				speak: function(data) {
-					return this.perform("speak", data);
-				}
-			}
-		);
-	}
+	
+
+
+	
+	
+	// componentDidMount() {
+	// 	let id = this.state.channelId
+	// 	this.chat = App.cable.subscriptions.create(
+	// 		{ channel: "ChannelChannel", id: id },
+	// 		{
+	// 			received: data => {
+	// 				this.updateLog(data);
+	// 			},
+	// 			load: function() {
+	// 				return this.perform("load");
+	// 			},
+	// 			speak: function(data) {
+	// 				return this.perform("speak", data);
+	// 			}
+	// 		}
+	// 	);
+	// }
 
 	update(e) {
 		this.setState({ body: e.target.value });
 	}
 
-	updateLog(data) {
-		if (data.type === "message") {
-			this.props.cableMessage(data);
-		} else if (data.type === "messages") {
-			this.props.cableMessages();
-		}
-	}
+	// updateLog(data) {
+	// 	if (data.type === "message") {
+	// 		this.props.cableMessage(data);
+	// 	} else if (data.type === "messages") {
+	// 		this.props.cableMessages();
+	// 	}
+	// }
 	// openChannel(id) {
 	// 	this.chat = App.cable.subscriptions.create(
 	// 		{ channel: "ChannelChannel", id: id },

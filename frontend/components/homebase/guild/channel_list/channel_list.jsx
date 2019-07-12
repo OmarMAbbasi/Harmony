@@ -10,28 +10,28 @@ class ChannelList extends React.Component {
 			currentChannel: this.props.match.params.channelId
 		};
 		this.onClick = this.onClick.bind(this);
-		this.loadChat = this.loadChat.bind(this);
-		this.openChannel = this.openChannel.bind(this);
+		// this.loadChat = this.loadChat.bind(this);
+		// this.openChannel = this.openChannel.bind(this);
 	}
 
 	componentDidMount() {
-		this.props.fetchGuild(this.props.guildId);
+		if (this.props.channels[0]) {
+			this.props.fetchChannel(this.props.channels[0].id);
+		}
 	}
 
-
-	componentDidUpdate(params, params2) {
-		let id = this.state.currentChannel;
-		if (id) {
-			this.openChannel(id);
+	componentDidUpdate(prevProps, prevState) {
+		if (
+			!this.props.match.params.channelId &&
+			!this.state.currentChannel &&
+			this.props.channels[0]
+		) {
+			this.props.fetchChannel(this.props.channels[0].id);
+			this.setState({ currentChannel: this.props.channels[0].id });
+		} else if (this.props.guildId !== prevProps.guildId) {
+			this.props.fetchGuild(this.props.guildId);
+			this.setState({ currentChannel: undefined });
 		}
-		else {
-			console.log()
-		}
-		// if (this.match) {
-		// 	id = this.match.params.channelId;
-		// 	this.openChannel(id);
-		// 	this.loadChat();
-		// }
 	}
 
 	loadChat() {
@@ -43,42 +43,40 @@ class ChannelList extends React.Component {
 		let id = e.currentTarget.id;
 		this.props.fetchChannel(id);
 		this.setState({ currentChannel: id });
-		// this.forceUpdate();
 	}
 
-	openChannel(id) {
-		this.chat = App.cable.subscriptions.create(
-			{ channel: "ChannelChannel", id: id },
-			{
-				received: data => {
-					switch (data.type) {
-						case "message":
-							this.setState({
-								messages: this.state.messages.concat(data.message)
-							});
-							break;
-						case "messages":
-							this.setState({ messages: data.messages });
-							break;
-					}
-				},
-				load: function() {
-					return this.perform("load");
-				},
-				speak: function(data) {
-					return this.perform("speak", data);
-				}
-			}
-		);
-	}
+	// openChannel(id) {
+	// 	this.chat = App.cable.subscriptions.create(
+	// 		{ channel: "ChannelChannel", id: id },
+	// 		{
+	// 			received: data => {
+	// 				switch (data.type) {
+	// 					case "message":
+	// 						this.setState({
+	// 							messages: this.state.messages.concat(data.message)
+	// 						});
+	// 						break;
+	// 					case "messages":
+	// 						this.setState({ messages: data.messages });
+	// 						break;
+	// 				}
+	// 			},
+	// 			load: function() {
+	// 				return this.perform("load");
+	// 			},
+	// 			speak: function(data) {
+	// 				return this.perform("speak", data);
+	// 			}
+	// 		}
+	// 	);
+	// }
 
 	render() {
+		if (!this.props.guilds[this.props.guildId]) {
+			return null;
+		}
 		let currentChannel =
 			this.props.match.params.channelId || this.state.currentChannel;
-		// if (!currentChannel && this.props.channels[0]) {
-		// 	let channel = this.props.channels[0];
-		// 	currentChannel = channel.id;
-		// }
 
 		return (
 			<div className="channel-list-wrapper">

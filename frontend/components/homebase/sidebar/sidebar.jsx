@@ -12,12 +12,24 @@ class Sidebar extends React.Component {
 		this.onClick = this.onClick.bind(this);
 	}
 
+	componentDidMount() {
+		this.props.fetchGuild(this.state.activeGuildId);
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		if (prevProps.activeGuildId !== this.props.guildId) {
+			this.props.fetchGuild(this.props.activeGuildId);
+		}
+	}
+
 	onClick(e) {
-		this.setState({ activeGuildId: e.target.id });
 		let id = this.state.activeGuildId;
-		this.props.fetchGuild(id);
+		this.setState({ activeGuildId: e.target.id });
 	}
 	render() {
+		// if (!this.props.channels[0] || !this.props.channels[0].id) {
+		// 	return null;
+		// }
 		let css = "sidebar-list-item-wrapper";
 		if (this.state.activeGuildId == this.currentUser.home.id) {
 			css = "sidebar-list-item-wrapper-focus";
@@ -25,12 +37,12 @@ class Sidebar extends React.Component {
 		return (
 			<ul className="sidebar-container">
 				<li key="home" className="sidebar-list-item">
-						<img
-							onClick={this.onClick}
-							className={css}
-							id={this.currentUser.home.id}
-							src={window.icons.transparent}
-						/>
+					<img
+						onClick={this.onClick}
+						className={css}
+						id={this.currentUser.home.id}
+						src={window.icons.transparent}
+					/>
 				</li>
 				<li className="sidebar-list-item">
 					<div className="sidebar-separator"></div>

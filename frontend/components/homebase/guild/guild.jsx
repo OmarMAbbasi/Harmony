@@ -10,28 +10,32 @@ class Guild extends Component {
 		super(props);
 		this.currentUser = this.props.currentUser;
 		this.state = {
-			guildId: this.props.match.params.guildId || this.props.currentUser.home.id
+			guildId:
+				this.props.match.params.guildId || this.props.currentUser.home.id,
+			currentChannel: -1
 		};
 	}
 
 	componentDidMount() {
-		this.props.fetchGuild(
-			this.props.match.params.guildId || this.props.currentUser.home.id
-		);
+		// debugger;
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		this.props.fetchGuild(
-			this.props.match.params.guildId || this.props.currentUser.home.id
-		);
+	
 	}
 
 	render() {
 		return (
 			<div className="guild-box">
 				<div className="guild-bar">
-					<GuildTag guildId={this.props.match.params.guildId} />
-					<ChannelList guildId={this.props.match.params.guildId} />
+					<GuildTag
+						channelId={this.state.channelId}
+						guildId={this.props.match.params.guildId}
+					/>
+					<ChannelList
+						channelId={this.state.channelId}
+						guildId={this.props.match.params.guildId}
+					/>
 
 					<UserAnchor />
 				</div>
