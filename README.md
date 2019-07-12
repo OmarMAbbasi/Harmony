@@ -337,9 +337,13 @@ EasyTrade, a Robinhood clone, is an investing application that allows users to p
 When a username logs in they are taken to a personal Home guild. Joining has a low barrier of entry.
 <br />
 <br />
-<img src="./app/assets/images/dashboard.gif" align="center" />
+<img src=".app/assets/readme/UsernameCreation2.gif" align="center" />
 <br />
 <br />
+
+".app/assets/readme/Submit message.gif"
+
+".app/assets/readme/Server and Guild navigation.gif"
 
 #### Modular and Persistent Fields
 
@@ -421,6 +425,14 @@ function OpenButton({ openUsernameField, currentUser }) {
 
 ### Guilds and Channels
 
+<br />
+<br />
+<img src=".app/assets/readme/Server and Guild navigation.gif" align="center" />
+<br />
+<br />
+
+".app/assets/readme/Submit message.gif"
+
 As users navigate through thier guilds and channels, the view updates dynamically with visual feedback. As they navigate through, there is visual feedback as to which Guild or Channel they are hovering over or currently in.
 
 Each guild and channel has a websocket so the user can see what updates inside each in realtime.L0
@@ -476,7 +488,27 @@ componentDidUpdate(prevProps, prevState) {
 	}
 }
 ```
+
 #### ChatBox
 
-The field at the bottom of the chatbox is connected to the channel's websocket directly. Currently the messages that flow via the socket are not visible. 
+The field at the bottom of the chatbox is connected to the channel's websocket directly. Currently the messages that flow via the socket are not visible. On enter keypress the field will send the body to the websocket.
 
+<br />
+<br />
+<img src=".app/assets/readme/Submit message.gif" align="center" />
+<br />
+<br />
+
+```js
+handleSubmit(e) {
+	e.preventDefault();
+	this.chat.speak({ message: "somemessage", authorId: 1 });
+	this.setState({ body: "" });
+}
+addMessage(e) {
+	if (e.keyCode == 13 && e.shiftKey == false) {
+		this.handleSubmit(e);
+	}
+}
+
+```
