@@ -81,7 +81,7 @@ class Chatbox extends Component {
 			authorId: this.props.currentUser.id
 		});
 		this.setState({ body: "" });
-		this.loadChat;
+		this.loadChat();
 	}
 
 	addMessage(e) {
@@ -119,9 +119,9 @@ class Chatbox extends Component {
 				</div>
 				<div className="channel-content">
 					<div className="chat-content">
-						<div className="message-box">
+						<div dispaly="flex" className="message-box">
 							{this.props.messages.map(message => (
-								<li>
+								<li key={message.id} height={"10px"}>
 									{message.body}
 									<br></br>
 								</li>
