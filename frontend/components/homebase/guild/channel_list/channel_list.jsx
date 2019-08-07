@@ -17,6 +17,8 @@ class ChannelList extends React.Component {
 	componentDidMount() {
 		if (this.props.channels[0]) {
 			this.props.fetchChannel(this.props.channels[0].id);
+		} else {
+			this.props.fetchChannel(this.props.match.params.channelId);
 		}
 	}
 
