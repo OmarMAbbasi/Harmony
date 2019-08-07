@@ -17,7 +17,7 @@ class Guild extends Component {
 	}
 
 	componentDidMount() {
-		// debugger;
+		
 	}
 
 	componentDidUpdate(prevProps, prevState) {

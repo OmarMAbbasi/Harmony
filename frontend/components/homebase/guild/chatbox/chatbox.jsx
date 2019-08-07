@@ -4,7 +4,6 @@ import { cableMessage } from "../../../../actions/message_actions";
 class Chatbox extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { messages: [] };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
 		this.openChannel = this.openChannel.bind(this);
@@ -22,33 +21,34 @@ class Chatbox extends Component {
 		this.chat;
 	}
 
-	// componentDidMount() {
-	// 	let id = this.state.channelId
-	// 	this.chat = App.cable.subscriptions.create(
-	// 		{ channel: "ChannelChannel", id: id },
-	// 		{
-	// 			received: data => {
-	// 				this.updateLog(data);
-	// 			},
-	// 			load: function() {
-	// 				return this.perform("load");
-	// 			},
-	// 			speak: function(data) {
-	// 				return this.perform("speak", data);
-	// 			}
-	// 		}
-	// 	);
-	// }
+	componentDidMount() {
+		let id = this.state.channelId;
+		this.chat = App.cable.subscriptions.create(
+			{ channel: "ChannelChannel", id: id },
+			{
+				received: data => {
+					this.updateLog(data);
+				},
+				load: function() {
+					return this.perform("load");
+				},
+				speak: function(data) {
+					return this.perform("speak", data);
+				}
+			}
+		);
+	}
 
 	update(e) {
 		this.setState({ body: e.target.value });
 	}
 
 	updateLog(data) {
+		// console.log(data);
 		if (data.type === "message") {
 			this.props.cableMessage(data);
 		} else if (data.type === "messages") {
-			this.props.cableMessages();
+			this.props.cableMessages(data);
 		}
 	}
 
@@ -90,8 +90,6 @@ class Chatbox extends Component {
 		}
 	}
 
-	componentDidMount() {}
-
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.openedChannel !== this.props.match.params.channelId) {
 			this.openChannel();
@@ -111,7 +109,10 @@ class Chatbox extends Component {
 	}
 
 	render() {
+		// console.log(messages);
+		// debugger;
 		let messages = this.props.messages || [];
+		// console.log(someMess.children);
 		return (
 			<div className="channel-box">
 				<div className="channel-header">
@@ -120,6 +121,7 @@ class Chatbox extends Component {
 				<div className="channel-content">
 					<div className="chat-content">
 						<div dispaly="flex" className="message-box">
+							{/* {someMess} */}
 							{this.props.messages.map(message => (
 								<li key={message.id} height={"10px"}>
 									{message.body}

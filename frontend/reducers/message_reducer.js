@@ -10,6 +10,7 @@ const messageReducer = (oldState = [], action) => {
 			return newState;
 		case CABLE_MESSAGE:
 			let message = {};
+			debugger;
 			message[action.payload.messages.id] = action.payload.messages;
 			newState = Object.assign({}, oldState, message);
 			return newState;
@@ -22,5 +23,19 @@ const messageReducer = (oldState = [], action) => {
 			return oldState;
 	}
 };
+
+// const renameObjKey = ({ action.payload.messages, oldKey, newKey }) => {
+// 	const messageKeys = Object.keys(action.payload.messages);
+// 	const newObj = keys.reduce((acc, val) => {
+// 		if (val === oldKey) {
+// 			acc[newKey] = action.payload.messages[oldKey];
+// 		} else {
+// 			acc[val] = action.payload.messages[val];
+// 		}
+// 		return acc;
+// 	}, {});
+
+// 	return newObj;
+// };
 
 export default messageReducer;
