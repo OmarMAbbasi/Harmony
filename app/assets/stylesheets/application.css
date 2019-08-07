@@ -1050,6 +1050,7 @@ video {
 .chat-content {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	flex: 1 1 auto;
 }
 
@@ -1058,6 +1059,7 @@ video {
 	overflow-y: scroll;
 	display: flex;
 	flex: 1 1 auto;
+	flex-direction: column;
 }
 
 .message-form {
@@ -1117,7 +1119,15 @@ video {
 	padding: 10px;
 }
 
+.message-item-container {
+	overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	user-select: text;
+	outline: 0;
+}
 
-.message-item {
-	
+.message-wrapper {
 }

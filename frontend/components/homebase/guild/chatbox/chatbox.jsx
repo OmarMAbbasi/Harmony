@@ -18,6 +18,7 @@ class Chatbox extends Component {
 			openedChannel: -1,
 			loaded: false
 		};
+		this.scrollToBottom = this.scrollToBottom.bind(this);
 		this.chat;
 	}
 
@@ -37,6 +38,7 @@ class Chatbox extends Component {
 				}
 			}
 		);
+		this.scrollToBottom();
 	}
 
 	update(e) {
@@ -102,17 +104,20 @@ class Chatbox extends Component {
 			this.loadChat();
 			this.setState({ loaded: true });
 		}
+		this.scrollToBottom();
 	}
 
 	loadChat() {
 		this.chat.load();
 	}
 
+	scrollToBottom() {
+		debugger;
+		this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+	}
+
 	render() {
-		// console.log(messages);
-		// debugger;
 		let messages = this.props.messages || [];
-		// console.log(someMess.children);
 		return (
 			<div className="channel-box">
 				<div className="channel-header">
@@ -120,14 +125,19 @@ class Chatbox extends Component {
 				</div>
 				<div className="channel-content">
 					<div className="chat-content">
-						<div dispaly="flex" className="message-box">
-							{/* {someMess} */}
+						<div className="message-box">
 							{this.props.messages.map(message => (
 								<li key={message.id} height={"10px"}>
 									{message.body}
 									<br></br>
 								</li>
 							))}
+							<div
+								style={{ float: "left", clear: "both" }}
+								ref={el => {
+									this.messagesEnd = el;
+								}}
+							></div>
 						</div>
 						<form onSubmit={this.handleSubmit} className="message-form">
 							<div className="message-form-wrapper">
