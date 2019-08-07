@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 		currentGuild: state.entities.channels[ownProps.guildId],
 		messages: Object.values(state.entities.messages).filter(
 			mess => mess.channelId == ownProps.match.params.channelId
-		).reverse()
+		)
 	};
 };
 
