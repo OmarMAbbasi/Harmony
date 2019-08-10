@@ -1036,8 +1036,8 @@ video {
 .channel-content {
 	background-color: #36393f;
 	display: flex;
-	flex-direction: row;
 	flex: 1 1 auto;
+	overflow: hidden;
 }
 
 .channel-title {
@@ -1050,6 +1050,7 @@ video {
 .chat-content {
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
 	height: 100%;
 	flex: 1 1 auto;
 }
@@ -1059,7 +1060,8 @@ video {
 	overflow-y: scroll;
 	display: flex;
 	flex: 1 1 auto;
-	flex-direction: column;
+	flex-direction: column-reverse;
+	justify-content: end;
 }
 
 .message-form {

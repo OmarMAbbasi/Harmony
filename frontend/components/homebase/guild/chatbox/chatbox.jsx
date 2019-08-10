@@ -19,6 +19,7 @@ class Chatbox extends Component {
 			loaded: false
 		};
 		this.scrollToBottom = this.scrollToBottom.bind(this);
+
 		this.chat;
 	}
 
@@ -38,7 +39,7 @@ class Chatbox extends Component {
 				}
 			}
 		);
-		this.scrollToBottom();
+		this.messagesEnd.scrollIntoView();
 	}
 
 	update(e) {
@@ -112,7 +113,6 @@ class Chatbox extends Component {
 	}
 
 	scrollToBottom() {
-		debugger;
 		this.messagesEnd.scrollIntoView({ behavior: "smooth" });
 	}
 
@@ -126,18 +126,19 @@ class Chatbox extends Component {
 				<div className="channel-content">
 					<div className="chat-content">
 						<div className="message-box">
-							{this.props.messages.map(message => (
-								<li key={message.id} height={"10px"}>
-									{message.body}
-									<br></br>
-								</li>
-							))}
 							<div
 								style={{ float: "left", clear: "both" }}
 								ref={el => {
 									this.messagesEnd = el;
 								}}
 							></div>
+							{this.props.messages.map(message => (
+								<li key={message.id} height={"10px"}>
+									{message.body}
+								</li>
+							)).reverse()x}
+
+							<div style={{ height: "100%" }}></div>
 						</div>
 						<form onSubmit={this.handleSubmit} className="message-form">
 							<div className="message-form-wrapper">

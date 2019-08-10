@@ -15,7 +15,7 @@ class ChannelChannel < ApplicationCable::Channel
       message["createdAt"] = message.delete("created_at")
       message["updatedAt"] = message.delete("updated_at")
       socket = { messages: message, users: author, channels: channel, type: 'message' }
-      ChannelChannel.broadcast_to(@channel, socket)
+      ChannelChannel.broadcast_to(@channel, socket) 
     end
   end
 
