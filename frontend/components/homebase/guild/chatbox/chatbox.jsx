@@ -132,11 +132,13 @@ class Chatbox extends Component {
 									this.messagesEnd = el;
 								}}
 							></div>
-							{this.props.messages.map(message => (
-								<li key={message.id} height={"10px"}>
-									{message.body}
-								</li>
-							)).reverse()x}
+							{this.props.messages
+								.map(message => (
+									<li key={message.id} height={"10px"}>
+										{message.body}
+									</li>
+								))
+								.reverse()}
 
 							<div style={{ height: "100%" }}></div>
 						</div>
