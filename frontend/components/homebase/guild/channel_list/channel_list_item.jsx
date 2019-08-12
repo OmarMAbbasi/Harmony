@@ -9,9 +9,7 @@ class ChannelIndexItem extends React.Component {
 			current: "false"
 		};
 	}
-
-
-
+	
 	render() {
 		let css = "channel-list-item";
 		let hash = "channel-hash";
