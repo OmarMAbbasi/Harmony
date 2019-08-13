@@ -14,6 +14,7 @@ const messageReducer = (oldState = [], action) => {
 			newState = Object.assign({}, oldState, message);
 			return newState;
 		case CABLE_MESSAGES:
+
 			if (action.payload) {
 				newState = Object.assign({}, oldState, action.payload.messages);
 			}
