@@ -11,7 +11,9 @@
 #
 
 class Message < ApplicationRecord
-
+    def created_at
+        attributes['created_at'].strftime("%m/%d/%Y %l:%M %P")
+    end
     belongs_to :author,
         class_name: :User
 
