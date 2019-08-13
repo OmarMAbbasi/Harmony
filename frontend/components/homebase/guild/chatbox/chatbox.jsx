@@ -120,8 +120,9 @@ class Chatbox extends Component {
 	render() {
 		let messages = this.props.messages || [];
 		let channel =
-			this.props.channels.find(ele => ele.id == this.state.currentChannel) ||
-			false;
+			this.props.channels.find(
+				ele => ele.id == this.props.match.params.channelId
+			) || false;
 		if (channel) {
 			channel = channel.name;
 		}

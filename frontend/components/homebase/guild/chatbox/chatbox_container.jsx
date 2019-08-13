@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 	return {
 		guildId: ownProps.guildId,
 		currentUser: currentUser,
+		users: state.entities.users,
 		guilds: state.entities.guilds,
 		channels: Object.values(state.entities.channels).filter(
 			chan => chan.guildId == ownProps.channelId || currentUser.home.id
