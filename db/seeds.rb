@@ -11,44 +11,204 @@ Message.delete_all
 Guild.delete_all
 Channel.delete_all
 
-demo = User.create!(
-    username: "demouser",
-    email: "demouser@gmail.com",
+  me = User.create!(
+      username: "Omar",
+      email: "omarmabbasi@gmail.com",
+      password:"password1234"
+  )
+
+
+
+  
+  icarus = User.create!(
+      username: "icarus",
+      email: "icarus@gmail.com",
+      password:"password1234"
+  )
+  jellybean = User.create!(
+      username: "jellybean",
+      email: "jellybean@gmail.com",
+      password:"password1234"
+  )
+
+
+recruiter = User.create!(
+    username: "AwesomeRecruiter",
+    email: "recruiter@gmail.com",
     password: "password1234"
   )
+
+
+  ##Horde
+
+      horde = Guild.create!(
+        name: "For The Horde!",
+        owner_id: me.id
+    )
+GuildMembership.create!(guild_id: horde.id, user_id: me.id)
+GuildMembership.create!(guild_id: horde.id, user_id: icarus.id)
+GuildMembership.create!(guild_id: horde.id, user_id: jellybean.id)
+GuildMembership.create!(guild_id: horde.id, user_id: recruiter.id)
+
+  sylvanas = User.create!(
+      username: "Sylvanas",
+      email: "sylvanas@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: horde.id, user_id: sylvanas.id)
+
+
   
-30.times do 
-    User.create!(
-        username: Faker::Esport.player.gsub(/[@#:`"']/, ""),
-        email: Faker::Internet.unique.email,
-        password: Faker::Internet.password(8)
-    )
-end
+  thrall = User.create!(
+      username: "Thrall",
+      email: "thrall@gmail.com",
+      password:"password1234"
+  )
 
-10.times do 
-    guild = Guild.create!(
-        name: Faker::Game.title,
-        owner_id: 0
-    )
-    5.times do
-    Channel.create!(
-        name: Faker::Lorem.word,
-        guild_id: guild.id
+GuildMembership.create!(guild_id: horde.id, user_id: thrall.id)
+
+
+  saurfang = User.create!(
+      username: "Saurfang",
+      email: "saurfang@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: horde.id, user_id: saurfang.id)
+
+
+  cairne = User.create!(
+      username: "Cairne",
+      email: "cairne@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: horde.id, user_id: cairne.id)
+
+
+    voljin = User.create!(
+      username: "Voljin",
+      email: "voljin@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: horde.id, user_id: voljin.id)
+
+
+    gallywix = User.create!(
+      username: "Gallywix",
+      email: "gallywix@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: horde.id, user_id: gallywix.id)
+
+
+
+    general =  Channel.create!(
+        name: "general",
+        guild_id: horde.id
         )
-    end
-    GuildMembership.create!(guild_id: guild.id, user_id: demo.id)
-end
 
-3.times do 
-    guild = Guild.create!(
-        name: Faker::Game.title,
-        owner_id: demo.id
+        Message.create!(
+            author_id:  voljin.id,
+            channel_id: general.id,
+            body: "How's everyone doin?"
+        )
+
+        Message.create!(
+            author_id:  gallywix.id,
+            channel_id: general.id,
+            body: "Wait? Aren't you dead?"
+        )
+        
+        Message.create!(
+            author_id:  voljin.id,
+            channel_id: general.id,
+            body: "Yea, I'm a ghost now, just checkin in"
+        )
+
+        Message.create!(
+            author_id:  gallywix.id,
+            channel_id: general.id,
+            body: "Horde's doin great, we're rollin in gold."
+        )
+
+        Message.create!(
+            author_id:  saurfang.id,
+            channel_id: general.id,
+            body: "@Sylvanas tried to kill me and @Thrall."
+        )        
+        
+        Message.create!(
+            author_id:  sylvanas.id,
+            channel_id: general.id,
+            body: "No clue what you're talking about."
+        )
+
+    raids =  Channel.create!(
+        name: "raids",
+        guild_id: horde.id
+        )
+
+                Message.create!(
+            author_id:  saurfang.id,
+            channel_id: raids.id,
+            body: "We need to figure out how to get @Cairne safe"
+        )
+
+        Message.create!(
+            author_id:  thrall.id,
+            channel_id: raids.id,
+            body: "Where you at?"
+        )
+        
+        Message.create!(
+            author_id:  cairne.id,
+            channel_id: raids.id,
+            body: "I'm fine, Alliance broke me out. What next."
+        )
+
+        Message.create!(
+            author_id:  saurfang.id,
+            channel_id: raids.id,
+            body: "Get the Horde back."
+        )
+
+    pvp =  Channel.create!(
+        name: "pvp",
+        guild_id: horde.id
+        )
+
+        Message.create!(
+            author_id:  sylvanas.id,
+            channel_id: pvp.id,
+            body: "So we've burned that pesky tree down. What next"
+        )
+
+        Message.create!(
+            author_id:  sylvanas.id,
+            channel_id: pvp.id,
+            body: "Guys...."
+        )
+
+        Message.create!(
+            author_id:  sylvanas.id,
+            channel_id: pvp.id,
+            body: "Is anyone here?"
+        )
+
+        Message.create!(
+            author_id:  sylvanas.id,
+            channel_id: pvp.id,
+            body: "Is anyone here?"
+        )
+
+
+
+
+    alliance = Guild.create!(
+        name: "For The Alliance!",
+        owner_id: me.id
     )
-    5.times do
-        Channel.create!(
-            name: Faker::Lorem.word,
-            guild_id: guild.id
-            )
-    end
-    GuildMembership.create!(guild_id: guild.id, user_id: demo.id)
-end

@@ -4,6 +4,7 @@ import {
 } from "../actions/session_actions";
 
 import { CABLE_MESSAGE, CABLE_MESSAGES } from "../actions/message_actions";
+import { GET_GUILD } from "../actions/guild_actions";
 
 const usersReducer = (oldState = {}, action) => {
 	Object.freeze(oldState);
@@ -14,6 +15,9 @@ const usersReducer = (oldState = {}, action) => {
 			return newState;
 		case RECEIVE_CURRENT_USER:
 			newState[action.currentUser.id] = action.currentUser;
+			return newState;
+		case GET_GUILD:
+			Object.assign(newState, action.payload.users);
 			return newState;
 		case ABANDON_USERNAME:
 			newState = {};

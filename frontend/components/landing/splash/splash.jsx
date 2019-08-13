@@ -32,7 +32,7 @@ class Splash extends React.Component {
 	demoLogin(e) {
 		e.preventDefault();
 		let user = {
-			email: "demouser@gmail.com",
+			email: "recruiter@gmail.com",
 			password: "password1234"
 		};
 		this.props.login(user).then(() => this.props.history.push("/home/"));
