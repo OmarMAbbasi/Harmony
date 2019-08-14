@@ -19,7 +19,7 @@ const guildsReducer = (oldState, action) => {
 			newState = {};
 			return newState;
 		case RECEIVE_GUILD_ERRORS:
-			newState = action.errors;
+			newState = oldState
 			return newState;
 		default:
 			return oldState;

@@ -24,8 +24,7 @@ const channelsReducer = (oldState = {}, action) => {
 			Object.assign(newState, action.payload.channels);
 			return newState;
 		case RECEIVE_CHANNEL_ERRORS:
-			newState = action.errors;
-			return newState;
+			return oldState;
 		default:
 			return oldState;
 	}

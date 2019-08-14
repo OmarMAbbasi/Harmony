@@ -21,12 +21,12 @@ Channel.delete_all
 
   
   icarus = User.create!(
-      username: "icarus",
+      username: "Icarus",
       email: "icarus@gmail.com",
       password:"password1234"
   )
   jellybean = User.create!(
-      username: "jellybean",
+      username: "Jellybean",
       email: "jellybean@gmail.com",
       password:"password1234"
   )
@@ -204,11 +204,3 @@ GuildMembership.create!(guild_id: horde.id, user_id: gallywix.id)
             channel_id: pvp.id,
             body: "Is anyone here?"
         )
-
-
-
-
-    alliance = Guild.create!(
-        name: "For The Alliance!",
-        owner_id: me.id
-    )

@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
 		this.props.fetchGuild(this.state.activeGuildId);
 	}
 
-	componentDidUpdate(prevProps, prevState) {
+	componentWillUpdate(prevProps, prevState) {
 		if (prevProps.activeGuildId !== this.props.guildId) {
 			this.props.fetchGuild(this.props.activeGuildId);
 		}
