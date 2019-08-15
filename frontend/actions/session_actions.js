@@ -7,9 +7,9 @@ export const ABANDON_USERNAME = "ABANDON_USERNAME";
 
 //Actions
 
-const receiveCurrentUser = currentUser => ({
+const receiveCurrentUser = payload => ({
 	type: "RECEIVE_CURRENT_USER",
-	currentUser
+	payload
 });
 
 const logoutCurrentUser = () => ({
