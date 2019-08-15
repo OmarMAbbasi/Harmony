@@ -7,7 +7,6 @@ class ChannelChannel < ApplicationCable::Channel
   def speak(data)
     message = @channel.messages.new(body: data['message'], author_id: data['authorId'] )
     if message.save
-      # debugger
       author = message.author
       author = {id: author.id, username: author.username, digits: author.digits}
       channel = message.channel

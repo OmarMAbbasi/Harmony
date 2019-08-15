@@ -38,11 +38,131 @@ recruiter = User.create!(
     password: "password1234"
   )
 
+welcome = Guild.create!(
+    name: "Welcome to Harmony",
+    owner_id: me.id
+)
 
-  ##Horde
+welch = Channel.create!(
+    name: "welcome",
+    guild_id: welcome.id
 
+)
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "Hi! My name is Omar and I'm a full stack developer."
+        )
+                Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "Welcome to Harmony, my final project from my App Academy days."
+        )
+                Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "Harmony is a clone of the Discord communication platform I built in a few weeks."
+        )
+                Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "In this server you will see some information about some of my other projects and the technologies they use. The other servers are just me being a silly gamer nerd."
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "Here are all the relevant links to some of the essential information you'd need if you want to hire me"
+        )
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "OmarMAbbasi@gmail.com"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "650-518-6090"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "http://OmarMAbbasi.github.io/"
+        )
+
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
+            body: "https://www.linkedin.com/in/omar-abbasi-9a790683/"
+        )
+
+        harmony = Channel.create!(
+            name: "harmony",
+            guild_id: welcome.id
+        )
+
+                    Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "https://github.com/OmarMAbbasi/Harmony/"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "Having always been a gamer and a nerd, Discord was an obvious choice for my final project."
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "Overall I would say it was one of the more difficult ones I could have tackled, but I learned a lot. "
+        )        
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "Harmony is built using a Ruby on Rails backend with a React / Redux frontend."
+        )        
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "For the chat aspect of Harmony to function, ActionCable was needed to implement websockets to function."
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "The way Harmony is designed is entirely a single page React app. Once a user enters the main page, everything is handled with Routers and Modals."
+        )
+
+     Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "Because of how Redux works, there were optimization advantages to prefetching some data with my AJAX requests."
+        )
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "Because of how Redux works, there were optimization advantages to prefetching some data with my AJAX requests."
+        )
+            
+
+
+GuildMembership.create!(guild_id: welcome.id, user_id: me.id)
+GuildMembership.create!(guild_id: welcome.id, user_id: icarus.id)
+GuildMembership.create!(guild_id: welcome.id, user_id: jellybean.id)
+GuildMembership.create!(guild_id: welcome.id, user_id: recruiter.id)
+##Horde
       horde = Guild.create!(
-        name: "For The Horde!",
+        name: "Horde: For The Horde!",
         owner_id: me.id
     )
 GuildMembership.create!(guild_id: horde.id, user_id: me.id)
@@ -204,3 +324,148 @@ GuildMembership.create!(guild_id: horde.id, user_id: gallywix.id)
             channel_id: pvp.id,
             body: "Is anyone here?"
         )
+
+
+##Alliance
+
+    alliance = Guild.create!(
+        name: "Alliance: For The Alliance!",
+        owner_id: me.id
+    )
+
+GuildMembership.create!(guild_id: alliance.id, user_id: me.id)
+GuildMembership.create!(guild_id: alliance.id, user_id: icarus.id)
+GuildMembership.create!(guild_id: alliance.id, user_id: jellybean.id)
+GuildMembership.create!(guild_id: alliance.id, user_id: recruiter.id)
+
+  anduin = User.create!(
+      username: "Anduin",
+      email: "anduin@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: alliance.id, user_id: anduin.id)
+
+
+  
+  jaina = User.create!(
+      username: "Jaina",
+      email: "jaina@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: alliance.id, user_id: jaina.id)
+
+
+  malfurion = User.create!(
+      username: "Malfurion",
+      email: "malfurion@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: alliance.id, user_id: malfurion.id)
+
+
+  tyrande = User.create!(
+      username: "Tyrande",
+      email: "tyrande@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: alliance.id, user_id: tyrande.id)
+
+
+    graymane = User.create!(
+      username: "Graymane",
+      email: "graymane@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: alliance.id, user_id: graymane.id)
+
+
+    velen = User.create!(
+      username: "Velen",
+      email: "velen@gmail.com",
+      password:"password1234"
+  )
+
+GuildMembership.create!(guild_id: alliance.id, user_id: velen.id)
+
+
+
+     general =  Channel.create!(
+        name: "general",
+        guild_id: alliance.id
+    )
+
+    Message.create!(
+            author_id:  anduin.id,
+            channel_id: general.id,
+            body: "How's everyone's morning so far?"
+    )
+
+    Message.create!(
+        author_id:  velen.id,
+        channel_id: general.id,
+        body: "Just checked with the Lightforged. Their giant laser is still broken"
+    )
+
+    Message.create!(
+        author_id:  graymane.id,
+        channel_id: general.id,
+        body: "Would make everything easier"
+    )
+
+    raid =  Channel.create!(
+        name: "raid",
+        guild_id: alliance.id
+    )
+
+    Message.create!(
+        author_id:  jaina.id,
+        channel_id: raid.id,
+        body: "How's Mekkatorque?"
+    )
+
+    Message.create!(
+        author_id:  anduin.id,
+        channel_id: raid.id,
+        body: "Still in asleep"
+    )
+
+    Message.create!(
+        author_id:  jaina.id,
+        channel_id: raid.id,
+        body: "...."
+    )
+
+    Message.create!(
+        author_id:  graymane.id,
+        channel_id: raid.id,
+        body: "you're the one who lost to a bunch of trolls"
+    )
+
+
+    pvp =  Channel.create!(
+        name: "pvp",
+        guild_id: alliance.id
+    )
+
+    Message.create!(
+        author_id:  tyrande.id,
+        channel_id: pvp.id,
+        body: "@Malfurion how do you like my new contacts"
+    )
+
+    Message.create!(
+        author_id:  malfurion.id,
+        channel_id: pvp.id,
+        body: "A little dark, but they're alright"
+    )
+
+    Message.create!(
+        author_id:  malfurion.id,
+        channel_id: pvp.id,
+        body: "Don't we have a tree to avenge?"
+    )

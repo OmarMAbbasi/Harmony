@@ -3,7 +3,7 @@
 class Api::UsersController < ApplicationController
   # before_action :ensure_user_tag, only: [:create]
   before_action :set_user, only: [:update, :destroy]
-  
+  z
   def create
     @user = User.new(user_params)
     if @user.save
