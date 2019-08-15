@@ -10,13 +10,15 @@ class Sidebar extends React.Component {
 			activeGuildId: props.match.params.guildId || this.currentUser.home.id
 		};
 		this.onClick = this.onClick.bind(this);
-	}
-
-	componentDidMount() {
 		this.props.fetchGuild(this.state.activeGuildId);
 	}
 
+	componentDidMount() {
+		// this.props.fetchGuild(this.state.activeGuildId);
+	}
+
 	componentWillUpdate(prevProps, prevState) {
+		debugger;
 		if (prevProps.activeGuildId !== this.props.guildId) {
 			this.props.fetchGuild(this.props.activeGuildId);
 		}

@@ -24,6 +24,9 @@ class Chatbox extends Component {
 		this.chat;
 	}
 
+	componentWillUpdate(params) {
+	}
+
 	componentDidMount() {
 		let id = this.state.channelId;
 		this.chat = App.cable.subscriptions.create(
@@ -118,7 +121,7 @@ class Chatbox extends Component {
 	}
 
 	render() {
-		let messages = this.props.messages || [];
+		let messages = Object.values(this.props.messages) || [];
 		let channel =
 			this.props.channels.find(
 				ele => ele.id == this.props.match.params.channelId

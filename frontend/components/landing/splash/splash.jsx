@@ -29,6 +29,7 @@ class Splash extends React.Component {
 			username: this.state.username
 		});
 	}
+
 	demoLogin(e) {
 		e.preventDefault();
 		let user = {
@@ -50,7 +51,6 @@ class Splash extends React.Component {
 	render() {
 		const opened = this.state.opened;
 		let splash;
-
 		if (!opened) {
 			splash = (
 				<div className="splash-wrapper">
@@ -111,6 +111,7 @@ class Splash extends React.Component {
 				</div>
 			);
 		}
+
 		return (
 			<section className="hero">
 				<div className="welcome">

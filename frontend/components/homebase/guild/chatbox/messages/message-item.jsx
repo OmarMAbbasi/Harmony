@@ -4,7 +4,9 @@ export default function messageItem(props) {
 	const authorId = props.message.authorId;
 	const author = getState().entities.users[authorId];
 	const sentAt = new Date(props.message.createdAt);
-	debugger;
+	if (!author) {
+		return null;
+	}
 	return (
 		<li className="message-wrapper">
 			<div className="message-header-wrapper">

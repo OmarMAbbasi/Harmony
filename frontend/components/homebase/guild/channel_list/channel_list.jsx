@@ -36,6 +36,13 @@ class ChannelList extends React.Component {
 		} else if (this.props.guildId !== prevProps.guildId) {
 			this.props.fetchGuild(this.props.guildId);
 			this.setState({ currentChannel: undefined });
+		} else if (
+			!this.props.match.params.channelId &&
+			this.state.currentChannel
+		) {
+			this.props.history.push(
+				`/home/guilds/${this.props.guildId}/${this.state.currentChannel}`
+			);
 		}
 	}
 

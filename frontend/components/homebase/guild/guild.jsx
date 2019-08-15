@@ -4,6 +4,7 @@ import UserAnchor from "./user_anchor/user_anchor_container";
 import ChannelList from "./channel_list/channel_list_container";
 import GuildTag from "./guild_tag";
 import ChatboxContainer from "./chatbox/chatbox_container";
+import { fetchChannel } from "../../../util/channel_api_util";
 
 class Guild extends Component {
 	constructor(props) {
@@ -16,9 +17,7 @@ class Guild extends Component {
 		};
 	}
 
-	componentDidMount() {
-		
-	}
+	componentDidMount() {}
 
 	componentDidUpdate(prevProps, prevState) {
 		if (prevState.guildId !== this.props.match.params.guildId) {
