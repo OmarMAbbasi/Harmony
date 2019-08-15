@@ -13,11 +13,12 @@ const sessionReducer = (oldState = _nullUser, action) => {
 	let newState = Object.assign({}, oldState);
 	switch (action.type) {
 		case RECEIVE_CURRENT_USER:
-			newState.id = action.currentUser.id;
+			newState["currentUser"] = action.payload.currentUser;
+			newState["id"] = action.payload.currentUser.id;
 			return newState;
 		case LOGOUT_CURRENT_USER:
-			newState.id = undefined;
-			newState.home = undefined;
+			newState["currentUser"] = undefined
+			newState["id"] = undefined;
 			return newState;
 		case RECEIVE_SESSION_ERRORS:
 			return newState;

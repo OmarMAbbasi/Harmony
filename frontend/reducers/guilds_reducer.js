@@ -1,3 +1,4 @@
+import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import {
 	GET_GUILD,
 	DELETE_GUILD,
@@ -18,8 +19,11 @@ const guildsReducer = (oldState, action) => {
 		case DELETE_GUILD:
 			newState = {};
 			return newState;
+		case RECEIVE_CURRENT_USER:
+			Object.assign(newState, action.payload.guilds);
+			return newState;
 		case RECEIVE_GUILD_ERRORS:
-			newState = oldState
+			newState = oldState;
 			return newState;
 		default:
 			return oldState;

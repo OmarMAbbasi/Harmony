@@ -6,6 +6,7 @@ import {
 
 import { GET_GUILD } from "../actions/guild_actions";
 import { CABLE_MESSAGE, CABLE_MESSAGES } from "../actions/message_actions";
+import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
 const channelsReducer = (oldState = {}, action) => {
 	Object.freeze(oldState);
@@ -19,6 +20,9 @@ const channelsReducer = (oldState = {}, action) => {
 			return newState;
 		case DELETE_CHANNEL:
 			newState = {};
+			return newState;
+		case RECEIVE_CURRENT_USER:
+			Object.assign(newState, action.payload.channels);
 			return newState;
 		case GET_GUILD:
 			Object.assign(newState, action.payload.channels);
