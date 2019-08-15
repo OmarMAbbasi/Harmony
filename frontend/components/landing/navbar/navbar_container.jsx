@@ -4,10 +4,11 @@ import { connect } from "react-redux";
 import Navbar from "./navbar";
 
 const mapStateToProps = (
-	{ session: { id }, entities: { users } },
+	{ session: { currentUser, id }, entities: { users } },
 	ownProps
 ) => ({
-	currentUser: users[id]
+	currentUser: currentUser,
+	id: id
 });
 
 const mapDispatchToProps = dispatch => ({

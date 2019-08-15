@@ -4,10 +4,11 @@ import { logout } from "../../actions/session_actions";
 import { Switch, Router, Route, Link, withRouter } from "react-router-dom";
 
 const mapStateToProps = (
-	{ session: { id }, entities: { users } },
+	{ session: { currentUser, id }, entities: { users } },
 	ownProps
 ) => ({
-	currentUser: users[id]
+	currentUser: currentUser, 
+	id: id
 });
 
 const mapDispatchToProps = dispatch => ({

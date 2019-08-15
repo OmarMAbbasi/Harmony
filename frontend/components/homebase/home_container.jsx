@@ -6,13 +6,14 @@ import { logout } from "../../actions/session_actions";
 import { fetchGuild } from "../../actions/guild_actions";
 
 const mapStateToProps = (
-	{ errors, session: { id }, entities: { users, guilds } },
+	{ errors, session: { currentUser, id }, entities: { users, guilds } },
 	ownProps
 ) => {
 	return {
 		errors: errors,
 		guilds: guilds,
-		currentUser: users[id]
+		currentUser: currentUser,
+		users: users
 	};
 };
 

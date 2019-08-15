@@ -5,12 +5,11 @@ import Sidebar from "./sidebar";
 import { fetchGuild } from "../../../actions/guild_actions";
 
 const mapStateToProps = (state, ownProps) => {
-	let currentUser = state.entities.users[state.session.id];
-	debugger;
+	let currentUser = state.session.currentUser;
 	return {
 		currentUser: currentUser,
 		home: currentUser.home,
-		guilds: currentUser.guilds,
+		guilds: state.entities.guilds,
 		channels: Object.values(state.entities.channels).filter(
 			chan =>
 				chan.guildId == ownProps.match.params.guildId || currentUser.home.id

@@ -5,12 +5,12 @@ import UserAnchor from "./user_anchor";
 import { logout } from "../../../../actions/session_actions";
 
 const mapStateToProps = (
-	{ errors, session: { id }, entities: { users } },
+	{ errors, session: { currentUser, id }, entities: { users } },
 	ownProps
 ) => {
 	return {
 		errors: errors,
-		currentUser: users[id]
+		currentUser: currentUser
 	};
 };
 

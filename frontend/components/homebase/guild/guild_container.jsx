@@ -5,13 +5,19 @@ import Guild from "./guild";
 import { logout } from "../../../actions/session_actions";
 import { fetchGuild } from "../../../actions/guild_actions";
 import { fetchChannel } from "../../../actions/channel_actions";
+
 const mapStateToProps = (
-	{ errors, session: { id }, entities: { users, guilds, channels } },
+	{
+		errors,
+		session: { currentUser, id },
+		entities: { users, guilds, channels }
+	},
 	ownProps
 ) => {
 	return {
 		errors: errors,
-		currentUser: users[id],
+		currentUser: currentUser,
+		users: users, 
 		guilds: guilds,
 		channels: channels
 	};
