@@ -1201,3 +1201,7 @@ video {
 .message-body {
 	color: #dcddde;
 }
+
+.message-body-link {
+	color: lightskyblue;
+}

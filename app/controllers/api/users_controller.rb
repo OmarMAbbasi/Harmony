@@ -3,10 +3,15 @@
 class Api::UsersController < ApplicationController
   # before_action :ensure_user_tag, only: [:create]
   before_action :set_user, only: [:update, :destroy]
-  z
+
   def create
     @user = User.new(user_params)
     if @user.save
+      
+      GuildMembership.create!(guild_id: 5, user_id: @user.id)
+      GuildMembership.create!(guild_id: 6, user_id: @user.id)
+      GuildMembership.create!(guild_id: 13, user_id: @user.id)
+
       login(@user)
       render '/api/users/show'
     else
