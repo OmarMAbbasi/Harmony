@@ -73,6 +73,12 @@ welch = Channel.create!(
         Message.create!(
             author_id:  me.id,
             channel_id: welch.id,
+            body: 'Feel free to test the app in the #message-testing channel'
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: welch.id,
             body: "Here are all the relevant links to some of the essential information you'd need if you want to hire me"
         )
         
@@ -91,7 +97,7 @@ welch = Channel.create!(
         Message.create!(
             author_id:  me.id,
             channel_id: welch.id,
-            body: "http://OmarMAbbasi.github.io/"
+            body: "https://github.com/OmarMAbbasi/"
         )
 
 
@@ -106,11 +112,18 @@ welch = Channel.create!(
             guild_id: welcome.id
         )
 
-                    Message.create!(
+        Message.create!(
             author_id:  me.id,
             channel_id: harmony.id,
             body: "https://github.com/OmarMAbbasi/Harmony/"
         )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "https://harmony-gg.herokuapp.com"
+        )
+        
 
         Message.create!(
             author_id:  me.id,
@@ -151,9 +164,93 @@ welch = Channel.create!(
         Message.create!(
             author_id:  me.id,
             channel_id: harmony.id,
-            body: "Because of how Redux works, there were optimization advantages to prefetching some data with my AJAX requests."
+            body: "Almost everything required for the app to function is prefetched on load. From there Websockets take care of all the message loading and updates"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: harmony.id,
+            body: "While the initial design didn't do exactly that, because my AJAX responses used payloads from the start, I was able to refactor easily."
         )
             
+
+                starfighter = Channel.create!(
+            name: "starfighter",
+            guild_id: welcome.id
+        )
+
+                    Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "https://github.com/OmarMAbbasi/StarfighterPvP/"
+        )
+                    Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "https://starfight.herokuapp.com/"
+        )
+        
+
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "Starfighter PvP is a team project built using the MERN stack.  "
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "It is a multi-user take on Asteroids drawn on a Javascript Canvas"
+        )        
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "I leveraged what I had learned about websockets while building Harmony to create the multiplayer aspect of the game. Including writing an especially useful Socket Manager on the backend that acted as a hub for sockets on the backend."
+        )        
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "The most fun project I took on in this game was writing and implementing the powerups. I wanted to create something fun to add flavor like shotguns and increased damage between rounds."
+        )
+
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "My other major role in this project was the team leader. I acted as the scrum-master for the team, leading the daily standups. Treating the 5 day timeframe we had to build the app as an Agile sprint"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "I also handled the development pipeline, creating test and staging environments to ensure that only a fully functioning product was ever pushed to live "
+        )
+
+     Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "I had to be familiar with the entire codebase as I spent about 40% of my time ensuring each developer's deliverables integrated into the user experience cleanly"
+        )
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: starfighter.id,
+            body: "I also wrote and executed the unit tests to make sure that all tests were passed before being pushed to a production environment. This involved writing the bulk of the error handling logic."
+        )
+
+        testing = Channel.create!(
+            name: "message-testing",
+            guild_id: welcome.id
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: testing.id,
+            body: "Hi there! Feel free to test the app over here, leave any feedback for me, or any messages you want for future users in this channel!"
+        )
 
 
 GuildMembership.create!(guild_id: welcome.id, user_id: me.id)
