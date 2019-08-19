@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	let store;
 	let currentUser = window.currentUser;
-	if(window.currentUser.currentUser) {
-		currentUser = window.currentUser.currentUser
+	debugger;
+	if (window.currentUser && window.currentUser.currentUser) {
+		currentUser = window.currentUser.currentUser;
 	}
 	if (currentUser) {
 		const preloadedState = {
