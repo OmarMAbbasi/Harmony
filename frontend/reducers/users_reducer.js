@@ -14,8 +14,9 @@ const usersReducer = (oldState = {}, action) => {
 			newState = Object.assign({}, oldState, action.payload.messages);
 			return newState;
 		case RECEIVE_CURRENT_USER:
-			// Object.assign(newState, action.payload.users);
-			return action.payload.users;
+			Object.assign(newState, action.payload.users);
+			debugger;
+			return newState;
 		case GET_GUILD:
 			Object.assign(newState, action.payload.users, oldState);
 			return newState;

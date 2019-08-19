@@ -241,6 +241,66 @@ welch = Channel.create!(
             body: "I also wrote and executed the unit tests to make sure that all tests were passed before being pushed to a production environment. This involved writing the bulk of the error handling logic."
         )
 
+                magicdungeon = Channel.create!(
+            name: "magic-dungeon",
+            guild_id: welcome.id
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "https://github.com/OmarMAbbasi/MagicDungeon/"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "https://omarmabbasi.github.io/MagicDungeon/dist/index.html"
+        )
+        
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "Magic Dungeon is a procedurally generated dungeon crawler where the maze is built using a recursive backtracking algorithm built using vanilla DOM and CSS Keyframe animations."
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "This game is very much a work in progress. The backend works beautifully, but actual gameplay needs a lot of work"
+        )              
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "I chose to build the game in the way I did in part because I wanted learn more about CSS Keyframe Animations"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "I wanted to see just how far I could push the limitations of CSS Keyframes without relying on Javascript canvas."
+        )
+
+     Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "One of the most valuable skills I picked up during the process of building the game is learning how to throttle and debounce user input. I needed to control how often and when functions were being called to prevent unintended movement and allow for clean diagonal movement. "
+        )
+        
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "In the process of learning about keyframe animation, I learned a lot about its limitations. I feel like the project has hit an impasse where the technical limitations of keyframes do not allow me to build the vision I want"
+        )
+
+        Message.create!(
+            author_id:  me.id,
+            channel_id: magicdungeon.id,
+            body: "Sometimes a creator has to know when to scrap a project or put it on the backburner to rebuild. This is very much a lesson in that, and I am leaving it in my profile as a testament to that."
+        )
+
         testing = Channel.create!(
             name: "message-testing",
             guild_id: welcome.id
